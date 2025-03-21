@@ -1,15 +1,80 @@
-/* 受験対策ページ用ボタン */
+/* 全体のスタイル */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F5F5F5;
+}
+
+/* ヘッダー */
+header {
+    background-color: #FF8C00;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    color: white;
+    margin: 0;
+}
+
+/* ナビゲーション */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 5px 10px;
+    background-color: #FF4500;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #FF8C00;
+}
+
+/* コンテンツ部分 */
+section {
+    margin: 30px auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 800px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ボタン */
 .btn {
     display: inline-block;
     background-color: #FF8C00;
     color: white;
-    padding: 10px 15px;
+    padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
-    margin: 10px;
-    transition: 0.3s;
+    transition: background-color 0.3s;
 }
 
 .btn:hover {
     background-color: #FF4500;
+}
+
+/* フッター */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #FF8C00;
+    color: white;
+    margin-top: 20px;
 }
