@@ -3,12 +3,12 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #F5F5F5;
+    background-color: #E0F7FA; /* 淡い水色で背景を優しく */
 }
 
 /* ヘッダー */
 header {
-    background-color: #FF8C00;
+    background-color: #007ACC; /* 深い青色 */
     padding: 20px;
     text-align: center;
 }
@@ -35,13 +35,13 @@ nav ul li a {
     text-decoration: none;
     color: white;
     padding: 5px 10px;
-    background-color: #FF4500;
+    background-color: #0099CC; /* 鮮やかな青色 */
     border-radius: 5px;
     transition: background-color 0.3s;
 }
 
 nav ul li a:hover {
-    background-color: #FF8C00;
+    background-color: #005B96; /* 濃い青色 */
 }
 
 /* コンテンツ部分 */
@@ -58,7 +58,7 @@ section {
 /* ボタン */
 .btn {
     display: inline-block;
-    background-color: #FF8C00;
+    background-color: #007ACC;
     color: white;
     padding: 10px 20px;
     text-decoration: none;
@@ -67,14 +67,14 @@ section {
 }
 
 .btn:hover {
-    background-color: #FF4500;
+    background-color: #005B96;
 }
 
 /* フッター */
 footer {
     text-align: center;
     padding: 10px;
-    background-color: #FF8C00;
+    background-color: #007ACC;
     color: white;
     margin-top: 20px;
 }
