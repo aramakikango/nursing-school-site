@@ -3,14 +3,15 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #E0F7FA; /* 淡い水色で背景を優しく */
+    background-color: #E0F7FA; /* 淡い水色 */
 }
 
 /* ヘッダー */
 header {
-    background-color: #007ACC; /* 深い青色 */
+    background-color: #007ACC; /* 深い青 */
     padding: 20px;
     text-align: center;
+    border-bottom: 3px solid #005B96;
 }
 
 header h1 {
@@ -22,37 +23,38 @@ header h1 {
 nav ul {
     list-style-type: none;
     padding: 0;
-    margin: 10px 0;
+    margin: 15px 0;
     text-align: center;
 }
 
 nav ul li {
     display: inline;
-    margin-right: 15px;
+    margin-right: 20px;
 }
 
 nav ul li a {
     text-decoration: none;
     color: white;
-    padding: 5px 10px;
-    background-color: #0099CC; /* 鮮やかな青色 */
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    padding: 10px 20px;
+    background-color: #0099CC;
+    border-radius: 20px;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 nav ul li a:hover {
-    background-color: #005B96; /* 濃い青色 */
+    background-color: #005B96;
+    transform: scale(1.05);
 }
 
 /* コンテンツ部分 */
 section {
     margin: 30px auto;
-    padding: 20px;
+    padding: 30px;
     width: 80%;
     max-width: 800px;
     background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 /* ボタン */
@@ -62,19 +64,22 @@ section {
     color: white;
     padding: 10px 20px;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    border-radius: 10px;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 10px;
 }
 
 .btn:hover {
     background-color: #005B96;
+    transform: scale(1.05);
 }
 
 /* フッター */
 footer {
     text-align: center;
-    padding: 10px;
+    padding: 15px;
     background-color: #007ACC;
     color: white;
-    margin-top: 20px;
+    margin-top: 30px;
+    border-top: 3px solid #005B96;
 }
