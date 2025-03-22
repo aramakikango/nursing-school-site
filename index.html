@@ -5,30 +5,182 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>看護学校受験ナビ</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-
     <header>
-        <h1>看護学校受験ナビ</h1>
+        <div class="container">
+            <h1 style="color: white;">看護学校受験ナビ</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">ホーム</a></li>
+                    <li><a href="about.html">受験対策</a></li>
+                    <li><a href="motivation.html">志望動機対策</a></li>
+                    <li><a href="contact.html">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">ホーム</a></li>
-            <li><a href="about.html">受験対策</a></li>
-            <li><a href="contact.html">お問い合わせ</a></li>
-        </ul>
-    </nav>
+    <!-- 学校紹介セクション -->
+    <section class="about-section fade-in">
+        <div class="container">
+            <h2>看護学校受験ナビとは？</h2>
+            <p>看護学校受験に必要なすべてをサポート！<strong>AIを使った全教科指導！現役看護師による指導で合格を掴もう！</strong></p>
+            <p><strong>普段使っているLINEで簡単に質問できる！手厚いサポートが魅力です。</strong></p>
+        </div>
+    </section>
 
-    <section>
-        <h2>あなたの夢を叶えるために</h2>
-        <p>看護学校受験のポイントや対策を分かりやすく解説！</p>
-        <a href="about.html" class="btn">詳しく見る</a>
+    <!-- 料金比較セクション -->
+    <section class="pricing-section fade-in">
+        <div class="container">
+            <h2>他校との料金比較</h2>
+            <table class="pricing-table">
+                <tr><th>予備校名</th><th>講座</th><th>料金</th></tr>
+                <tr><td>第一看護予備校</td><td>社会人コース</td><td>113,760円</td></tr>
+                <tr><td>アガルートメディカル</td><td>ライトコース</td><td>130,240円</td></tr>
+                <tr><td>東京アカデミー</td><td>昼間数学コース</td><td>195,600円</td></tr>
+                <tr><td>当校 (看護学校受験ナビ)</td><td>全科目対応</td><td><span class="highlight">98,000円</span></td></tr>
+            </table>
+        </div>
+    </section>
+
+    <!-- 当校の強みセクション -->
+    <section class="advantages-section fade-in">
+        <div class="container">
+            <h2>当校が選ばれる理由</h2>
+            <ul class="advantages-list">
+                <li><i class="fas fa-chalkboard-teacher"></i> 現役看護師によるプロ指導！</li>
+                <li><i class="fas fa-robot"></i> AIを活用した効率的な学習サポート！</li>
+                <li><i class="fas fa-comment-dots"></i> LINEで簡単に質問やサポートを受けられる！</li>
+                <li><i class="fas fa-wallet"></i> 他校を圧倒するリーズナブルな料金！</li>
+            </ul>
+        </div>
+    </section>
+
+     <!-- 合格者の声セクション -->
+<section class="testimonials-section fade-in">
+    <div class="container">
+        <h2>合格者の声</h2>
+        <table class="testimonial-table">
+            <thead>
+                <tr>
+                    <th>コメント</th>
+                    <th>名前</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>「東京アカデミーの授業で合格できました！わかりやすい授業でしっかり学べました。」</td>
+                    <td>Aさん</td>
+                </tr>
+                <tr>
+                    <td>「個別指導で自分に合った勉強法を見つけられました。」</td>
+                    <td>Bさん</td>
+                </tr>
+                <tr>
+                    <td>「LINEで質問できるのが便利で安心でした。受験当日も自信を持って臨めました！」</td>
+                    <td>Cさん</td>
+                </tr>
+                <tr>
+                    <td>「AIを使った学習で苦手科目を克服できました！短期間で合格できたのはこのシステムのおかげです。」</td>
+                    <td>Dさん</td>
+                </tr>
+                <tr>
+                    <td>「看護師の指導が本当に役立ちました！面接対策もバッチリでした。」</td>
+                    <td>Eさん</td>
+                </tr>
+                <tr>
+                    <td>「24時間LINEで質問できるから安心して勉強できました！」</td>
+                    <td>Fさん</td>
+                </tr>
+                <tr>
+                    <td>「他校と比べて圧倒的に安い料金で質の高いサポートを受けられました。」</td>
+                    <td>Gさん</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+<!-- 特別プランのご案内 & よくある質問 -->
+<section class="special-plan-section fade-in">
+    <div class="container">
+        <!-- 特別プランのご案内 -->
+        <div class="special-plan-card">
+            <h2><i class="fas fa-star"></i> 特別プランのご案内</h2>
+            <p><strong>月額550円プラン:</strong> 24時間LINEで質問対応可能。効率よく学習できます！</p>
+        </div>
+
+        <!-- よくある質問 -->
+        <div class="faq-card">
+            <h2><i class="fas fa-question-circle"></i> よくある質問</h2>
+            <div class="faq-item">
+                <p><strong>Q:</strong> LINEで質問できるのはどんな内容ですか？</p>
+                <p><strong>A:</strong> 全教科に対応しています。苦手分野を徹底的にサポートします！</p>
+            </div>
+            <div class="faq-item">
+                <p><strong>Q:</strong> 受験対策コースの内容は？</p>
+                <p><strong>A:</strong> 数学・国語・英語・面接対策まで全てカバーしています。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+   <!-- 入学後も安心のサポート -->
+<section class="support-section fade-in">
+    <div class="container">
+        <div class="support-card">
+            <h2><i class="fas fa-graduation-cap"></i> 入学後も安心のサポート</h2>
+            <div class="support-content">
+                <div class="support-item">
+                    <i class="fas fa-book-open"></i>
+                    <h3>解剖生理学の基礎講義</h3>
+                    <p>看護学校入学後に困らないよう、解剖生理学の基礎をしっかり学べる講義を提供！</p>
+                </div>
+                <div class="support-item">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <h3>卒業までサポート</h3>
+                    <p>合格後も勉強のフォローや質問対応を続け、安心して看護学校生活を送れるようサポートします。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- 講師紹介セクション -->
+<section class="instructors-section fade-in">
+    <div class="container">
+        <h2>講師紹介</h2>
+        <div class="instructor">
+            <i class="fas fa-user-nurse"></i>
+            <h3>荒蒔 雅人</h3>
+            <p>看護受験の講師歴5年。多くの学生の志望動機添削を担当。自身も非正規雇用から看護師となった経験があり、同じような境遇の方の助けになりたい。</p>
+        </div>
+    </div>
+</section>
+    <!-- 受験相談フォーム -->
+    <section class="consultation-section fade-in">
+        <div class="container">
+            <h2>今すぐ無料受験相談を申し込もう！</h2>
+            <form action="#" method="POST">
+                <label>お名前:</label>
+                <input type="text" name="name" placeholder="お名前を入力してください" required>
+                <label>メールアドレス:</label>
+                <input type="email" name="email" placeholder="メールアドレスを入力してください" required>
+                <label>お問い合わせ内容:</label>
+                <textarea name="message" placeholder="質問や相談内容をご記入ください" required></textarea>
+                <button type="submit" class="btn">送信する</button>
+            </form>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 看護学校受験ナビ</p>
+        <div class="container">
+            <p>&copy; 2025 看護学校受験ナビ - 成功へのパートナー</p>
+        </div>
     </footer>
-
+    <script src="script.js"></script>
 </body>
 </html>

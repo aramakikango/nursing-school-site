@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ - 看護学校受験ナビ</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/feather-icons"></script> <!-- Feather Icons 読み込み -->
+</head>
+<body>
+    <header>
+        <h1>お問い合わせ</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="about.html">受験対策</a></li>
+                <li><a href="motivation.html">志望動機対策</a></li>
+                <li><a href="contact.html">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="content-card animate-fadein">
+        <h2><i data-feather="mail"></i> お問い合わせフォーム</h2>
+        <p>ご質問やご相談は以下のフォームよりお気軽にご連絡ください。</p>
+        <form action="#" method="post">
+            <label for="name"><i data-feather="user"></i> お名前:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email"><i data-feather="mail"></i> メールアドレス:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message"><i data-feather="edit"></i> メッセージ:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit" class="btn">送信する</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 看護学校受験ナビ</p>
+    </footer>
+
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>

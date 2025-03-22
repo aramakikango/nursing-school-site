@@ -1,85 +1,250 @@
-/* 全体のスタイル */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #E0F7FA; /* 淡い水色 */
+    background-color: #e6f7ff;
 }
 
-/* ヘッダー */
 header {
-    background-color: #007ACC; /* 深い青 */
+    background-color: #0066cc;
     padding: 20px;
     text-align: center;
-    border-bottom: 3px solid #005B96;
 }
 
-header h1 {
-    color: white;
-    margin: 0;
-}
-
-/* ナビゲーション */
-nav ul {
-    list-style-type: none;
+header nav ul {
+    list-style: none;
     padding: 0;
-    margin: 15px 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* セクション共通 */
+section {
+    padding: 40px;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+/* 料金表 */
+.pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-table th, .pricing-table td {
+    padding: 10px;
     text-align: center;
 }
 
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-nav ul li a {
-    text-decoration: none;
+.pricing-table th {
+    background-color: #0066cc;
     color: white;
-    padding: 10px 20px;
-    background-color: #0099CC;
-    border-radius: 20px;
-    transition: background-color 0.3s, transform 0.2s;
 }
 
-nav ul li a:hover {
-    background-color: #005B96;
-    transform: scale(1.05);
+.highlight {
+    color: #FF4500;
+    font-weight: bold;
 }
 
-/* コンテンツ部分 */
-section {
-    margin: 30px auto;
-    padding: 30px;
-    width: 80%;
-    max-width: 800px;
-    background-color: white;
-    border-radius: 15px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+/* リストスタイル */
+.advantages-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
 }
 
-/* ボタン */
-.btn {
-    display: inline-block;
-    background-color: #007ACC;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 10px;
-    transition: background-color 0.3s, transform 0.2s;
-    margin-top: 10px;
+.advantages-list li {
+    font-size: 18px;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
 }
 
-.btn:hover {
-    background-color: #005B96;
-    transform: scale(1.05);
+.advantages-list i {
+    margin-right: 10px;
+    color: #1E90FF;
 }
 
 /* フッター */
 footer {
-    text-align: center;
-    padding: 15px;
-    background-color: #007ACC;
+    background-color: #0066cc;
     color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+/* フェードイン */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s, transform 0.8s;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* 合格者の声テーブルスタイル */
+.testimonial-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.testimonial-table th {
+    background-color: #0066cc;
+    color: white;
+    padding: 10px;
+}
+
+.testimonial-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+/* テーブル全体の枠線 */
+.testimonial-table tbody tr:hover {
+    background-color: #f0faff;
+}
+
+/* テーブルタイトル */
+.testimonials-section h2 {
+    margin-bottom: 10px;
+}
+/* 講師紹介セクション */
+.instructors-section {
+    padding: 50px 0;
+    background-color: #f0faff;
+    text-align: center;
+}
+
+.instructor-list {
+    display: flex;
+    justify-content: space-around;
     margin-top: 30px;
-    border-top: 3px solid #005B96;
+}
+
+.instructor {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 30%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.instructor:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.instructor i {
+    font-size: 40px;
+    color: #0066cc;
+    margin-bottom: 10px;
+}
+
+.instructor h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+/* 入学後も安心のサポート */
+.support-section {
+    padding: 50px 0;
+}
+
+.support-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.support-card h2 {
+    color: #0066cc;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.support-card h2 i {
+    margin-right: 10px;
+}
+
+.support-content {
+    display: flex;
+    justify-content: space-around;
+}
+
+.support-item {
+    text-align: center;
+    max-width: 400px;
+}
+
+.support-item i {
+    font-size: 30px;
+    color: #1E90FF;
+    margin-bottom: 10px;
+}
+
+.support-item h3 {
+    margin-top: 10px;
+    font-size: 20px;
+    color: #333;
+}
+
+.support-item p {
+    color: #666;
+}
+/* 特別プランのご案内 & よくある質問 */
+.special-plan-section {
+    padding: 50px 0;
+    background-color: #f0faff;
+}
+
+.special-plan-card, .faq-card {
+    background-color: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.special-plan-card:hover, .faq-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.special-plan-card h2, .faq-card h2 {
+    color: #0066cc;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.special-plan-card h2 i, .faq-card h2 i {
+    margin-right: 10px;
+}
+
+.faq-item {
+    margin-bottom: 10px;
+}
+
+.faq-item p {
+    margin: 5px 0;
 }
