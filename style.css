@@ -218,7 +218,7 @@ footer {
 .support-item p {
     color: #666;
 }
-/* 特別プランのご案内 & よくある質問 */
+/* 特別プラン & よくある質問セクション */
 .special-plan-section {
     padding: 50px 0;
     background-color: #f0faff;
@@ -227,10 +227,11 @@ footer {
 .special-plan-card, .faq-card {
     background-color: white;
     padding: 20px;
-    margin: 20px 0;
-    border-radius: 10px;
+    margin: 20px auto;
+    border-radius: 12px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
+    max-width: 800px;
 }
 
 .special-plan-card:hover, .faq-card:hover {
@@ -242,7 +243,7 @@ footer {
     color: #0066cc;
     display: flex;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .special-plan-card h2 i, .faq-card h2 i {
@@ -250,12 +251,25 @@ footer {
 }
 
 .faq-item {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .faq-item p {
     margin: 5px 0;
+    line-height: 1.6;
 }
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .special-plan-card, .faq-card {
+        width: 90%;
+    }
+
+    .special-plan-card h2, .faq-card h2 {
+        font-size: 20px;
+    }
+}
+
 /* レスポンシブ対応 (スマホ用) */
 @media (max-width: 768px) {
     body {
@@ -327,19 +341,82 @@ footer {
         font-size: 16px;
     }
 
-    /* 入学後サポート */
-    .support-section {
-        padding: 20px;
+    /* 入学後も安心のサポート セクション */
+.support-section {
+    padding: 50px 0;
+    background-color: #f0faff;
+}
+
+.support-card {
+    background-color: white;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    max-width: 800px;
+}
+
+.support-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.support-card h2 {
+    color: #0066cc;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.support-card h2 i {
+    margin-right: 10px;
+}
+
+.support-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.support-item i {
+    font-size: 30px;
+    color: #1E90FF;
+    margin-right: 15px;
+}
+
+.support-item h3 {
+    margin: 0;
+    font-size: 20px;
+    color: #0066cc;
+}
+
+.support-item p {
+    margin-top: 5px;
+    line-height: 1.6;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .support-card {
+        width: 90%;
     }
 
-    .support-section h2 {
-        text-align: center;
+    .support-card h2 {
+        font-size: 20px;
     }
 
-    .support-section p {
-        font-size: 16px;
-        text-align: center;
+    .support-item {
+        flex-direction: column;
+        align-items: flex-start;
     }
+
+    .support-item h3 {
+        font-size: 18px;
+    }
+}
+
 }
 /* スマホ対応用のスタイル */
 @media (max-width: 768px) {
@@ -410,14 +487,25 @@ footer {
     border: 1px solid #ddd;
 }
 
-/* 特別プランとよくある質問のカードスタイル */
-.special-plan-card, .faq-card {
+/.support-section .container {
+    display: block; /* フレックスボックスを解除 */
+    text-align: center; /* 子要素を中央揃えにする */
+}
+
+.support-card {
+    margin: 20px auto; /* 自動で中央配置 */
     padding: 20px;
-    margin: 20px auto;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
     max-width: 800px;
 }
+
+.support-item {
+    margin: 20px auto;
+    text-align: left;
+}
+
 
 /* 講師紹介のスタイル */
 .instructor-profile {
@@ -495,3 +583,59 @@ footer {
     transform: translateY(0);
 }
 
+/* 当校の強みセクション */
+.advantages-section {
+    padding: 50px 0;
+    background-color: #f0faff;
+}
+
+.advantages-section h2 {
+    color: #0066cc;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.advantages-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.advantages-list li {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.advantages-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.advantages-list i {
+    color: #1E90FF;
+    margin-right: 15px;
+    font-size: 24px;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .advantages-list {
+        width: 90%;
+    }
+
+    .advantages-list li {
+        padding: 12px;
+    }
+
+    .advantages-list i {
+        font-size: 20px;
+    }
+}
