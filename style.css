@@ -124,42 +124,50 @@ footer {
 .testimonials-section h2 {
     margin-bottom: 10px;
 }
-/* 講師紹介セクション */
-.instructors-section {
-    padding: 50px 0;
-    background-color: #f0faff;
-    text-align: center;
-}
-
-.instructor-list {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 30px;
-}
-
-.instructor {
+/* 講師紹介セクションのスタイル */
+.instructors-section .instructor {
     background-color: white;
     padding: 20px;
-    border-radius: 8px;
-    width: 30%;
+    border-radius: 12px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
+    max-width: 500px; /* 横幅を制限する */
 }
 
-.instructor:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-}
-
-.instructor i {
-    font-size: 40px;
-    color: #0066cc;
+/* アイコンのスタイル */
+.instructors-section .instructor i {
+    font-size: 48px;
+    color: #1E90FF;
     margin-bottom: 10px;
 }
 
-.instructor h3 {
-    margin-bottom: 10px;
-    font-size: 20px;
+/* 講師名と説明のスタイル */
+.instructors-section .instructor h3 {
+    margin: 10px 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.instructors-section .instructor p {
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* スマホ対応用のスタイル */
+@media (max-width: 768px) {
+    .instructors-section .instructor {
+        padding: 15px;
+        width: 90%; /* スマホ画面で幅を調整 */
+    }
+
+    .instructors-section .instructor h3 {
+        font-size: 20px;
+    }
+}
+
 }
 /* 入学後も安心のサポート */
 .support-section {
@@ -248,3 +256,191 @@ footer {
 .faq-item p {
     margin: 5px 0;
 }
+/* レスポンシブ対応 (スマホ用) */
+@media (max-width: 768px) {
+    body {
+        padding: 0;
+        margin: 0;
+    }
+
+    header .container, footer .container {
+        text-align: center;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .content-cards {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .advantages {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .advantage {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .testimonial-table {
+        width: 100%;
+    }
+
+    .testimonial-table td, .testimonial-table th {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .instructors-section .instructor {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .special-plan, .qa-section {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .extra-section .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 80%;
+        margin: 10px auto;
+        font-size: 16px;
+    }
+
+    /* 入学後サポート */
+    .support-section {
+        padding: 20px;
+    }
+
+    .support-section h2 {
+        text-align: center;
+    }
+
+    .support-section p {
+        font-size: 16px;
+        text-align: center;
+    }
+}
+/* スマホ対応用のスタイル */
+@media (max-width: 768px) {
+    body {
+        padding: 0;
+        margin: 0;
+    }
+
+    header .container, footer .container {
+        text-align: center;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .container {
+        width: 95%;
+        margin: auto;
+    }
+
+    .support-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .support-item {
+        max-width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .instructors-section .instructor {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    .special-plan, .qa-section {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .pricing-table, .testimonial-table {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .support-card {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        width: 100%;
+        margin: 10px auto;
+        font-size: 16px;
+    }
+}
+
+/* 合格者の声テーブルの調整 */
+.testimonial-table th, .testimonial-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+/* 特別プランとよくある質問のカードスタイル */
+.special-plan-card, .faq-card {
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+}
+
+/* 講師紹介セクションのスタイル */
+.instructors-section .instructor {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
+    width: 100%;
+}
+
+/* スクロールエフェクトのためのアニメーション */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s, transform 0.8s;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
