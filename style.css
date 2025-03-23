@@ -96,12 +96,7 @@ footer {
     opacity: 1;
     transform: translateY(0);
 }
-/* 合格者の声テーブルスタイル */
-.testimonial-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
+
 
 .testimonial-table th {
     background-color: #0066cc;
@@ -168,56 +163,48 @@ footer {
     }
 }
 
-}
-/* 入学後も安心のサポート */
+/* 入学後も安心のサポート - カードスタイル調整 */
 .support-section {
     padding: 50px 0;
+    display: flex;
+    justify-content: center; /* セクション全体を中央に配置 */
 }
 
 .support-card {
     background-color: white;
     padding: 30px;
-    border-radius: 10px;
+    border-radius: 12px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 40px;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
 }
 
-.support-card h2 {
-    color: #0066cc;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-}
-
-.support-card h2 i {
-    margin-right: 10px;
-}
-
+/* コンテンツを縦に並べる設定 */
 .support-content {
-    display: flex;
-    justify-content: space-around;
+    display: block; /* フレックスボックスを無効にする */
+    text-align: center; /* テキストを中央揃えにする */
 }
 
+/* 各サポートアイテムのスタイル */
 .support-item {
+    margin: 30px auto; /* 各要素の間に適度なスペースを確保 */
     text-align: center;
-    max-width: 400px;
+    max-width: 600px;
 }
 
-.support-item i {
-    font-size: 30px;
-    color: #1E90FF;
-    margin-bottom: 10px;
-}
-
+/* タイトルの色を統一 */
 .support-item h3 {
     margin-top: 10px;
-    font-size: 20px;
+    color: #0066cc;
+}
+
+/* 説明文の色を統一 */
+.support-item p {
     color: #333;
 }
 
-.support-item p {
-    color: #666;
-}
+
 /* 特別プラン & よくある質問セクション */
 .special-plan-section {
     padding: 50px 0;
@@ -341,61 +328,74 @@ footer {
         font-size: 16px;
     }
 
-    /* 入学後も安心のサポート セクション */
+/* 入学後も安心のサポート - カードスタイル調整 */
 .support-section {
     padding: 50px 0;
-    background-color: #f0faff;
+    display: flex;
+    justify-content: center; /* セクション全体を中央に配置 */
 }
 
 .support-card {
     background-color: white;
-    padding: 20px;
-    margin: 20px auto;
+    padding: 30px;
     border-radius: 12px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
     max-width: 800px;
+    width: 80%;
+    margin: 0 auto; /* 真ん中に配置 */
+}
+
+.support-content {
+    display: flex;
+    flex-direction: column; /* 縦に並べる */
+    align-items: center;
+}
+
+.support-item {
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* アイコンを青色にする */
+.support-item i {
+    color: #0066cc !important; /* アイコンを青色にする */
+    margin-bottom: 10px;
+}
+
+
+
+.support-item h3 {
+    margin-top: 10px;
+    color: #0066cc;
+}
+
+.support-item p {
+    color: #333;
+}
+/* 入学後も安心のサポート - カードスタイル調整 */
+.support-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 80%;
+    margin: 0 auto;
+    transition: transform 0.3s, box-shadow 0.3s; /* ホバーエフェクト用 */
+    position: relative;
+    z-index: 0; /* 他の要素の影響を避ける */
 }
 
 .support-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    z-index: 1; /* ホバー時に前面に表示 */
 }
 
-.support-card h2 {
-    color: #0066cc;
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
 }
 
-.support-card h2 i {
-    margin-right: 10px;
-}
 
-.support-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    padding: 10px;
-}
 
-.support-item i {
-    font-size: 30px;
-    color: #1E90FF;
-    margin-right: 15px;
-}
-
-.support-item h3 {
-    margin: 0;
-    font-size: 20px;
-    color: #0066cc;
-}
-
-.support-item p {
-    margin-top: 5px;
-    line-height: 1.6;
-}
 
 /* レスポンシブ対応 */
 @media (max-width: 768px) {
@@ -481,43 +481,67 @@ footer {
     }
 }
 
-/* 合格者の声テーブルの調整 */
-.testimonial-table th, .testimonial-table td {
-    padding: 10px;
-    border: 1px solid #ddd;
-}
-
-/.support-section .container {
-    display: block; /* フレックスボックスを解除 */
-    text-align: center; /* 子要素を中央揃えにする */
-}
-
-.support-card {
-    margin: 20px auto; /* 自動で中央配置 */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: white;
-    max-width: 800px;
-}
-
-.support-item {
-    margin: 20px auto;
-    text-align: left;
-}
-
-
-/* 講師紹介のスタイル */
-.instructor-profile {
+/* 合格者の声 - カード形式 */
+.testimonials-section {
+    padding: 50px 0;
+    background-color: #f0faff;
     display: flex;
-    align-items: center;
+    justify-content: center; /* 中央に配置するための設定 */
+}
+
+.testimonials-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 80%; /* コンテナ全体の幅を調整 */
+    max-width: 1000px; /* 最大幅を制限 */
+}
+
+.testimonial-card {
     background-color: white;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
-    max-width: 800px;
     transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-card h3 {
+    color: #0066cc;
+    margin-bottom: 10px;
+}
+
+.testimonial-card p {
+    color: #333;
+    line-height: 1.6;
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+    .testimonials-container {
+        width: 90%;
+    }
+}
+
+
+
+
+/* 講師紹介のスタイル */
+.instructor-profile {
+    background-color: white;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .instructor-profile:hover {
@@ -528,16 +552,19 @@ footer {
 .instructor-profile-icon {
     font-size: 50px;
     color: #1E90FF;
-    margin-right: 20px;
+    margin-bottom: 15px;
 }
 
 .instructor-profile-content {
     display: flex;
     flex-direction: column;
+    align-items: flex-start; /* 左揃えに変更 */
+    text-align: left; /* テキストも左揃えに変更 */
 }
 
+
 .instructor-profile-content h3 {
-    margin: 0;
+    margin: 10px 0;
     font-size: 22px;
     color: #0066cc;
 }
@@ -550,22 +577,16 @@ footer {
 /* スマホ対応 */
 @media (max-width: 768px) {
     .instructor-profile {
-        flex-direction: column;
-        align-items: center;
         padding: 15px;
-    }
-
-    .instructor-profile-icon {
-        margin-bottom: 10px;
+        width: 90%;
     }
 
     .instructor-profile-content h3 {
         font-size: 20px;
-        text-align: center;
     }
 
-    .instructor-profile-content p {
-        text-align: center;
+    .instructor-profile-icon {
+        margin-bottom: 10px;
     }
 }
 
