@@ -748,3 +748,51 @@ footer {
     text-align: center;
     margin-top: 30px;
 }
+
+/* 無料相談セクションのデザイン */
+.free-consultation-section {
+    background-color: #f0f8ff;
+    padding: 40px 0;
+}
+
+.free-consultation-card {
+    text-align: center;
+    padding: 30px;
+    margin: 0 auto;
+    max-width: 600px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.free-consultation-card h2 {
+    color: #4a90e2;
+    margin-bottom: 15px;
+}
+
+.free-consultation-card p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.btn-free-consultation {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4a90e2;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn-free-consultation:hover {
+    background-color: #357ab7;
+}
+/* =====================
+   合格者の声セクション
+===================== */
+.testimonials-section {
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    margin-bottom: 20px;
