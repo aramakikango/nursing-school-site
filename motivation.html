@@ -10,7 +10,7 @@
 <body>
 
     <header>
-        <h1>志望動機対策ページ</h1>
+        <h1> 面接官を引きつける志望動機の書き方！1</h1>
         <nav>
             <ul>
                 <li><a href="index.html">ホーム</a></li>
@@ -21,17 +21,129 @@
         </nav>
     </header>
 
-    <!-- 志望動機の書き方のポイント -->
-    <section class="content-card animate-fadein">
-        <h2><i data-feather="heart"></i> 志望動機を完璧に仕上げる！</h2>
-        <p>看護学校の面接で最も重要な「志望動機」を効果的に伝える方法を紹介します。</p>
-        <ul>
-            <li><i data-feather="check-circle"></i> 志望動機のポイントを明確にする。</li>
-            <li><i data-feather="check-circle"></i> 自分の経験や想いを具体的に表現する。</li>
-            <li><i data-feather="check-circle"></i> 面接官に響く表現方法を学ぶ。</li>
-        </ul>
-        <a href="about.html" class="btn">受験対策ページへ戻る</a>
-    </section>
+
+<!-- 志望動機の例セクション -->
+<section class="motivation-example-section fade-in">
+    <div class="container">
+        <h2><i data-feather="edit-3"></i> 💡 面接官を引きつける志望動機の書き方！</h2>
+        <div class="motivation-content">
+
+            <!-- 修正前 -->
+            <div class="motivation-card">
+                <h3>📌 修正前の志望動機</h3>
+                <div class="motivation-text">
+                    <p>私が看護師を志すようになったのは、家族を通じてその存在の大きさを実感した経験があったからです。<br>
+                    以前、父が入院した際、体調が悪く、不安そうにしていた姿を見て心配していました。しかし、お見舞いに行くと、父は楽しそうに看護師さんと話をしており、その穏やかな表情に驚きました。<br>
+                    看護師さんが毎日父を気遣い、寄り添い続けてくださっていたおかげで、父は不安を乗り越えられたのだと思います。<br>
+                    私は看護師として、患者様の不安に寄り添い、笑顔を引き出せる存在になりたいと考えています。<br>
+                    そのために、貴校の「病気を診ずして病人を診よ」という建学の精神に共感し、確かな知識と技術を学びたいと志望いたしました。</p>
+                </div>
+            </div>
+
+            <!-- 修正後 -->
+            <div class="motivation-card">
+                <h3>✅ 修正後の志望動機</h3>
+                <div class="motivation-text">
+                    <p>私が看護師を志すようになったきっかけは、家族を通じて看護師という存在の大きさを実感した経験からです。<br>
+                    父が入院した際、最初の頃は体調が悪く、不安そうにしていました。しかし、お見舞いに行った際に父が楽しそうに看護師さんと話している姿を見て驚きました。<br>
+                    看護師さんが毎日父を気遣い、優しく寄り添ってくれたおかげで、父は不安を乗り越えられたのだと実感しました。<br>
+                    この経験から、私は患者様に安心を与え、心の支えとなれる看護師になりたいと強く思うようになりました。<br>
+                    また、貴校の「病気を診ずして病人を診よ」という建学の精神に共感し、知識と技術をしっかりと学びたいと考え志望いたしました。</p>
+                </div>
+            </div>
+
+            <!-- 無料相談ボタン -->
+<div class="consultation-button">
+    <a href="questionnaire.html" class="btn-consultation pulse">無料相談を申し込む</a>
+</div>
+
+<!-- CSS -->
+<style>
+    .consultation-button {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .btn-consultation {
+        background: linear-gradient(90deg, #FF7F50, #FF4500);
+        color: white;
+        padding: 15px 30px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .btn-consultation::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.3);
+        transition: all 0.5s;
+    }
+
+    .btn-consultation:hover {
+        background: linear-gradient(90deg, #FF4500, #FF7F50);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-consultation:hover::before {
+        left: 100%;
+    }
+
+    /* アニメーションの追加 */
+    @keyframes pulse {
+        0%, 100% {
+            transform: scale(1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        50% {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255, 69, 0, 0.6);
+        }
+    }
+
+    .pulse {
+        animation: pulse 1.5s infinite;
+    }
+</style>
+
+
+            <!-- 修正理由 -->
+            <div class="example-card">
+                <h3>📝 修正のポイントと理由</h3>
+                <p>
+                    この志望動機の修正には、以下の重要なポイントがあります：
+                </p>
+                <ul>
+                    <li><strong>1. 読み手を引きつける導入部分の改善：</strong> 最初に「なぜ看護師を志すのか」を明確にし、実体験を基にストーリーを展開しました。これにより、面接官が興味を持ちやすくなります。</li>
+                    <li><strong>2. エピソードの整理と簡潔化：</strong> 複雑な表現を削減し、要点を伝えやすい構成に変更しました。不要な説明を省くことで文章の流れが良くなります。</li>
+                    <li><strong>3. 言葉遣いの改善：</strong> より自然でわかりやすい日本語表現に変更し、読みやすさを向上させました。</li>
+                    <li><strong>4. 志望理由の明確化：</strong> 学校の建学の精神に触れ、なぜその学校を選ぶのかを具体的に示すことで、説得力を持たせています。</li>
+                    <li><strong>5. 志望理由の強調：</strong>「患者様に安心を与え、心の支えとなれる看護師になりたい」という願いを明確に示しました。</li>
+                </ul>
+                <p>このように、志望動機をわかりやすく整理し、説得力を高めることが重要です。特に面接では、「なぜ看護師になりたいのか」をしっかりと伝えられることが評価されるポイントです。</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+        </div>
+    </div>
+</section>
+
+
+
 
    <!-- 志望動機添削の評価セクション -->
 <section class="reviews-section fade-in" id="reviews">
