@@ -1,0 +1,212 @@
+/* 全体設定 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff;
+}
+
+/* ヘッダー */
+.main-header {
+    background-color: #0066cc;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.main-header .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.main-header h1 {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.main-header .subtitle {
+    font-size: 18px;
+}
+
+/* セクション全体 */
+section {
+    margin: 30px auto;
+    padding: 20px;
+    max-width: 900px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* タイトル */
+h2 {
+    color: #0066cc;
+    margin-bottom: 15px;
+}
+
+/* フェードインアニメーション */
+.fade-in {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* リストスタイル */
+.steps-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.steps-section li {
+    margin-bottom: 15px;
+    background-color: #e0f7fa;
+    padding: 10px;
+    border-left: 5px solid #0066cc;
+    border-radius: 5px;
+}
+
+/* ボタン */
+.btn-free-consultation {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #ff6666;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+.btn-free-consultation:hover {
+    background-color: #ff4d4d;
+}
+
+/* フッター */
+footer {
+    background-color: #0066cc;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 30px;
+}
+.motivation-work-section {
+    background-color: #fff8f2;
+    padding: 40px 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    margin: 40px auto;
+    max-width: 900px;
+  }
+  
+  .motivation-work-section h2 {
+    text-align: center;
+    color: #e67300;
+    margin-bottom: 30px;
+    font-size: 24px;
+  }
+  
+  .question-box {
+    background-color: #ffffff;
+    border-left: 5px solid #ffa94d;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+  }
+  
+  .question-box h3 {
+    color: #cc6600;
+    margin-bottom: 10px;
+  }
+  
+  .question-box p {
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+  
+  .example {
+    font-style: italic;
+    color: #666;
+    font-size: 0.95em;
+    padding-left: 10px;
+    border-left: 3px solid #ffa94d;
+  }
+  
+  .note {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 30px;
+    color: #333;
+  }
+  .work-intro-section {
+    background-color: #fefefe;
+    padding: 40px 20px;
+    margin-top: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  
+  .work-intro-section h2 {
+    color: #0066cc;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .work-intro-section p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #333;
+  }
+  .voice-card {
+    background-color: #f9f9ff;
+    border-left: 5px solid #4a90e2;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 102, 204, 0.05);
+  }
+  
+  .voice-card .quote {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .voice-card .profile {
+    text-align: right;
+    font-weight: bold;
+    color: #666;
+  }
+  
+  .after-voice-cta {
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+    margin: 30px 0 20px;
+  }
+  
+  .cta-center {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .btn-free-consultation {
+    display: inline-block;
+    background-color: #ff6666;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 1em;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-free-consultation:hover {
+    background-color: #e55353;
+  }
+  
