@@ -214,3 +214,9 @@ body {
     object-fit: contain; /* 切り取らず、全体を表示 */
     display: block;
 }
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
