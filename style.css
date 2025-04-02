@@ -81,21 +81,27 @@ body {
     border-radius: 5px;
   }
   
-  .plans-grid,
   .pricing-grid {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
+    box-sizing: border-box;   /* ← 追加 */
+    width: 100%;              /* ← 追加 */
+    max-width: 100%;          /* ← 追加 */
   }
   
-  .plan-card,
+  
   .pricing-card {
     flex: 1 1 300px;
     background-color: #f0f0f0;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
+    box-sizing: border-box;  /* ← 追加 */
+    width: 100%;             /* ← 追加 */
+    max-width: 100%;         /* ← 念のため追加 */
   }
+  
   
   .highlight-card {
     background-color: #ffe4e1;
