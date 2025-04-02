@@ -206,16 +206,29 @@ body {
     background-color: #fff4f4;
     font-weight: bold;
   }
+/* section共通 → hero-bannerだけ除外 */
+section:not(.hero-banner) {
+    background: white;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
   .hero-banner {
     width: 100%;
-    overflow: hidden;
-    margin-bottom: 2rem; /* セクションとの間隔調整用 */
-}
-
-.hero-image {
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    border-radius: 0;
+    background: transparent;
+  }
+  
+  .hero-banner img {
     width: 100%;
     height: auto;
     display: block;
+    max-width: 100%;
   }
   
   
