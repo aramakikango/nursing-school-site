@@ -8,13 +8,17 @@ body {
     padding: 0;
     line-height: 1.6;
     font-size: 18px;
+    overflow-x: hidden; /* ← スマホ横スクロール防止 */
   }
+  
   
   .container {
     max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
+    box-sizing: border-box; /* ← これを追加！ */
   }
+  
   
   h1, h2, h3 {
     color: #0066cc;
@@ -210,13 +214,8 @@ body {
 
 .hero-image {
     width: 100%;
-    height: auto; /* 高さは自動に */
-    object-fit: contain; /* 切り取らず、全体を表示 */
-    display: block;
-}
-img {
-    max-width: 100%;
     height: auto;
     display: block;
   }
+  
   
