@@ -1,2 +1,0 @@
-#!/bin/bash
-powershell -ExecutionPolicy Bypass -File ./update-links.ps1

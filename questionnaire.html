@@ -1,70 +1,115 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>無料相談アンケート</title>
-    <link rel="stylesheet" href="style.css"> <!-- CSSのパスが間違っていないか確認 -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>無料相談アンケート｜マオズ看護学校予備校</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1 style="color: white; background-color: #0066cc; padding: 20px;">無料相談アンケート</h1>
+  <header>
+    <div class="container">
+      <h1 style="color: white; background-color: #0066cc; padding: 20px;">無料相談アンケート</h1>
+    </div>
+  </header>
+
+  <section class="questionnaire-section">
+    <div class="questionnaire-form">
+      <h2>以下の内容をご記入ください</h2>
+      <form id="consultationForm">
+        <label>お名前: <span style="color: red;">※必須</span></label>
+        <input type="text" name="name" placeholder="お名前を入力してください" required>
+        
+        <label>メールアドレス: <span style="color: red;">※必須</span></label>
+        <input type="email" name="email" placeholder="メールアドレスを入力してください" required>
+        
+        <label>受験予定校名:</label>
+        <input type="text" name="school" placeholder="受験予定の看護学校名を入力してください">
+        
+        <label>志望理由:</label>
+        <textarea name="reason" placeholder="志望理由をご記入ください"></textarea>
+        
+        <label>ご相談内容:</label>
+        <textarea name="content" placeholder="質問や相談内容をご記入ください"></textarea>
+        
+
+        <label>現在のご職業・立場:</label>
+        <select name="job">
+          <option value="">選択してください</option>
+          <option value="会社員">会社員</option>
+          <option value="主婦">主婦</option>
+          <option value="パート・アルバイト">パート・アルバイト</option>
+          <option value="学生">学生</option>
+          <option value="その他">その他</option>
+        </select>
+
+        <label>看護師を目指す理由（複数選択可）:</label>
+        <div>
+          <label><input type="checkbox" name="reasons" value="やりがいのある仕事をしたい"> やりがいのある仕事をしたい</label><br>
+          <label><input type="checkbox" name="reasons" value="家族の介護経験から"> 家族の介護経験から</label><br>
+          <label><input type="checkbox" name="reasons" value="安定した職業に就きたい"> 安定した職業に就きたい</label><br>
+          <label><input type="checkbox" name="reasons" value="自分に向いていると感じる"> 自分に向いていると感じる</label><br>
+          <label><input type="checkbox" name="reasons" value="その他"> その他</label>
         </div>
-    </header>
 
-    <section class="questionnaire-section">
-        <div class="questionnaire-form">
-            <h2>無料相談の詳細アンケート</h2>
-            <form id="consultationForm">
-                <label>お名前:</label>
-                <input type="text" name="name" placeholder="お名前を入力してください" required>
+        <label>現在の勉強状況や不安なこと:</label>
+        <textarea name="study_status" placeholder="例：数学が苦手です／志望動機がうまく書けません"></textarea>
 
-                <label>メールアドレス:</label>
-                <input type="email" name="email" placeholder="メールアドレスを入力してください" required>
+        <label>1日あたりの学習時間の目安:</label>
+        <select name="study_time">
+          <option value="">選択してください</option>
+          <option value="15分以下">15分以下</option>
+          <option value="15〜30分">15〜30分</option>
+          <option value="30〜60分">30〜60分</option>
+          <option value="1時間以上">1時間以上</option>
+        </select>
 
-                <label>受験予定校名:</label>
-                <input type="text" name="school" placeholder="受験予定の看護学校名を入力してください" required>
+        <label>ご連絡希望の手段:</label>
+        <select name="contact_method">
+          <option value="">選択してください</option>
+          <option value="LINE">LINE</option>
+          <option value="メール">メール</option>
+          <option value="どちらでもOK">どちらでもOK</option>
+        </select>
+        <p>※LINEでのご相談を希望された方は、下記ボタンから必ずLINEで友だち追加をお願いします。</p>
+<a href="https://lin.ee/RMEsDnD" class="btn-line" target="_blank">
+  <i class="fab fa-line"></i> LINEで友だち追加する
+</a>
 
-                <label>志望理由:</label>
-                <textarea name="reason" placeholder="志望理由をご記入ください" required></textarea>
 
-                <label>ご相談内容:</label>
-                <textarea name="content" placeholder="質問や相談内容をご記入ください" required></textarea>
+        <label>相談可能な時間帯（任意）:</label>
+        <input type="text" name="available_time" placeholder="例：平日19時以降／土日午前中 など">
 
-                <button type="submit">送信する</button>
-            </form>
-            <div id="responseMessage"></div>
-        </div>
-    </section>
+        <label>ご相談内容（自由記述）:</label>
+        <textarea name="content" placeholder="質問や相談内容をご記入ください" required></textarea>
 
-    <script>
-        document.getElementById("consultationForm").addEventListener("submit", async function(event) {
-            event.preventDefault();
+        <button type="submit">送信する</button>
+      </form>
+      <div id="responseMessage"></div>
+    </div>
+  </section>
 
-            const form = event.target;
-            const formData = new FormData(form);
-            const data = new URLSearchParams();
-
-            for (const pair of formData) {
-                data.append(pair[0], pair[1]);
-            }
-
-            try {
-                const response = await fetch("https://script.google.com/macros/s/AKfycbz24npo1_MYhcPca5y0AnLojw4SBbwtkNf91eld8zmxWhg-u8q4-wpd1w4rQ35mDaN1/exec", {
-                    method: "POST",
-                    body: data
-                });
-
-                const result = await response.text();
-                document.getElementById("responseMessage").innerText = result;
-                
-                // 送信後にフォームをクリア
-                form.reset();
-            } catch (error) {
-                document.getElementById("responseMessage").innerText = "エラーが発生しました。もう一度お試しください。";
-            }
+  <script>
+    document.getElementById("consultationForm").addEventListener("submit", async function(event) {
+      event.preventDefault();
+      const form = event.target;
+      const formData = new FormData(form);
+      const data = new URLSearchParams();
+      for (const pair of formData) {
+        data.append(pair[0], pair[1]);
+      }
+      try {
+        const response = await fetch("https://script.google.com/macros/s/AKfycbyAUFmMK2dytsjBbkSTWvgW3w-LZHYieD3akWzeeBCp-b0QFMsvtHHyj6kIx6FiWbP7/exec", {
+          method: "POST",
+          body: data
         });
-    </script>
+        const result = await response.text();
+        document.getElementById("responseMessage").innerText = result;
+        form.reset();
+      } catch (error) {
+        document.getElementById("responseMessage").innerText = "エラーが発生しました。もう一度お試しください。";
+      }
+    });
+  </script>
 </body>
 </html>

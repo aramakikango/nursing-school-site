@@ -294,5 +294,111 @@ section:not(.hero-banner) {
     background-color: #ff4d4d;
   }
   
+  .balloon-box {
+    display: flex;
+    margin: 20px 0;
+  }
+  .balloon-left,
+  .balloon-right {
+    max-width: 600px;
+    padding: 1em;
+    border-radius: 10px;
+    position: relative;
+    background-color: #f0f9ff;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  .balloon-left::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: -20px;
+    border: 10px solid transparent;
+    border-right-color: #f0f9ff;
+  }
+  .balloon-right {
+    margin-left: auto;
+    background-color: #fff4f4;
+  }
+  .balloon-right::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: -20px;
+    border: 10px solid transparent;
+    border-left-color: #fff4f4;
+  }
+  .schedule-block ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  .schedule-block li {
+    margin: 10px 0;
+    padding-left: 1.2em;
+    position: relative;
+  }
+  .schedule-block li::before {
+    content: "🕒";
+    position: absolute;
+    left: 0;
+  }
+  .cta-button {
+    background-color: #ff6b6b;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease;
+  }
+  .cta-button:hover {
+    background-color: #e55050;
+  }
+  .questionnaire-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1em;
+  }
+  
+  .questionnaire-form label {
+    font-weight: bold;
+    margin-bottom: 0.3em;
+  }
+  
+  .questionnaire-form input[type="text"],
+  .questionnaire-form input[type="email"],
+  .questionnaire-form select,
+  .questionnaire-form textarea {
+    padding: 0.6em;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .questionnaire-form textarea {
+    height: 100px;
+    resize: vertical;
+  }
+  
+  .questionnaire-form .checkbox-group label {
+    display: block;
+    margin: 0.2em 0;
+  }
+  
+  button[type="submit"] {
+    padding: 0.7em 1.5em;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #004b99;
   }
   
