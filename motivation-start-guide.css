@@ -209,4 +209,156 @@ footer {
   .btn-free-consultation:hover {
     background-color: #e55353;
   }
+  /**********************************************
+ * 吹き出し会話全体のラッパ
+ **********************************************/
+.faq-section {
+    margin: 30px 0;
+  }
+  
+  .faq-section .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /**********************************************
+   * 吹き出しボックス（左右に分ける）
+   **********************************************/
+  .balloon-box {
+    display: flex;
+    align-items: flex-start;
+    margin: 20px 0;
+  }
+  
+  /* 学生側の吹き出し（左） */
+  .balloon-left {
+    background-color: #f0f9ff;
+    border-radius: 10px;
+    padding: 1em;
+    position: relative;
+    max-width: 70%;
+    margin-right: auto;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .balloon-left::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: -20px;
+    border: 10px solid transparent;
+    border-right-color: #f0f9ff;
+  }
+  
+  /* 講師側の吹き出し（右） */
+  .balloon-right {
+    background-color: #fff4f4;
+    border-radius: 10px;
+    padding: 1em;
+    position: relative;
+    max-width: 70%;
+    margin-left: auto;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .balloon-right::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: -20px;
+    border: 10px solid transparent;
+    border-left-color: #fff4f4;
+  }
+  
+  /**********************************************
+   * アイコン（人物画像）を整える
+   **********************************************/
+  .balloon-box img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+  }
+  
+  /* 学生アイコン（左） */
+  .balloon-left img {
+    float: left;
+    margin-right: 10px;
+  }
+  
+  /* 講師アイコン（右） */
+  .balloon-right img {
+    float: right;
+    margin-left: 10px;
+  }
+  
+  /**********************************************
+   * テキスト（名前や本文）を整える
+   **********************************************/
+  .balloon-left p,
+  .balloon-right p {
+    margin: 0;
+    line-height: 1.6;
+  }
+  
+  .balloon-left p strong,
+  .balloon-right p strong {
+    display: inline-block;
+    margin-bottom: 0.3em;
+    color: #333;
+  }
+  
+  /**********************************************
+   * スマホ対応
+   **********************************************/
+  @media (max-width: 600px) {
+    .balloon-box {
+      display: block;
+    }
+  
+    .balloon-left,
+    .balloon-right {
+      max-width: 100%;
+      margin: 10px 0;
+    }
+  
+    .balloon-left img,
+    .balloon-right img {
+      float: none;
+      display: block;
+      margin: 0 auto 10px;
+    }
+  
+    .balloon-left::before,
+    .balloon-right::before {
+      display: none; /* 吹き出し三角を消すか、位置を調整してもOK */
+    }
+  }
+  .hero-banner {
+    background-image: url("images/hero/hero-banner-motivation-start-guide.png");
+    background-size: cover;
+    background-position: center;
+    /* 高さを固定したい場合 */
+    height: 400px;
+    width: 100%;
+  }
+  .line-consultation {
+    background-color: #f8f8f8;
+    padding: 20px;
+    text-align: center;
+    margin: 40px 0;
+  }
+  .btn-line-consultation {
+    display: inline-block;
+    background-color: #00c300;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  .btn-line-consultation:hover {
+    background-color: #00a800;
+  }
   
