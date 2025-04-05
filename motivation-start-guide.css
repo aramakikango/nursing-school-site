@@ -361,4 +361,67 @@ footer {
   .btn-line-consultation:hover {
     background-color: #00a800;
   }
+  .main-header {
+    background-color: #0066cc;
+    color: white;
+    padding: 60px 20px; /* ←高さを確保 */
+    text-align: center;
+  }
+  
+  .main-header .subtitle {
+    font-size: 1.2em;
+    margin-top: 10px;
+  }
+  .main-header h1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #fff;
+    line-height: 1.4;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+  .visual-header {
+    background-color: #e6f0fa; /* 優しい水色背景 */
+    padding: 40px 0;
+  }
+  
+  .header-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .header-text {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  .header-text h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  
+  .header-text .subtitle {
+    font-size: 1.2em;
+    color: #333;
+  }
+  
+  .header-image {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+  }
+  
+  .header-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
   
