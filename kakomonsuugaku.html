@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数学過去問解説サイト</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- 分数表示用スタイル -->
+  <style>
+    .fraction {
+      display: inline-block;
+      text-align: center;
+      vertical-align: middle;
+      margin: 0 2px;
+    }
+    .fraction .numerator {
+      display: block;
+      font-size: 0.9em;
+      line-height: 1.2;
+    }
+    .fraction .denom {
+      display: block;
+      border-top: 1px solid #000;
+      font-size: 0.9em;
+      line-height: 1.2;
+    }
+  </style>
+</head>
+<body>
+  <!-- ヘッダー -->
+  <header>
+    <div class="container">
+      <h1 style="color: white;">数学過去問解説サイト</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="about.html">受験対策</a></li>
+          <li><a href="questionnaire.html">お問い合わせ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- ヒーローバナー -->
+  <section class="hero-banner">
+    <img src="images/hero/hero-banner-suugaku.png" alt="数学の過去問解説" class="hero-image">
+    <div class="container">
+      <h2>看護学校受験の数学は基礎があれば安心！</h2>
+      <p>中学レベルの内容も含まれるので、しっかり基礎を固めれば簡単に対応できます</p>
+    </div>
+  </section>
+  
+  <!-- 相談フォーム（LINE・フォーム）セクション -->
+  <section class="contact-choice-section fade-in">
+    <div class="container">
+      <div class="talk-bubble">
+        <p><strong>「LINEで気軽に」「フォームでしっかり」</strong><br>疑問や不安はすぐに解消！</p>
+      </div>
+      <div class="contact-buttons">
+        <a href="https://lin.ee/RMEsDnD" class="btn-line" target="_blank">
+          <i class="fab fa-line"></i> LINEで相談する
+        </a>
+        <a href="questionnaire.html" class="btn-consultation">
+          <i class="fas fa-envelope"></i> フォームで相談する
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- 過去問のレベル目安を会話形式で解説するセクション -->
+<section class="study-level-section fade-in">
+    <div class="container">
+      <h2>どのレベルまで解ければ大丈夫？ </h2>
+  
+      <div class="balloon-box">
+        <div class="balloon-left">
+          <img src="images/student/student-question.png" alt="学生疑問" style="width: 60px; float: left; margin-right: 10px;">
+          <p><strong>学生：</strong>「先生、試験対策でどのレベルまで解ければ安心なんでしょうか？」</p>
+        </div>
+      </div>
+  
+      <div class="balloon-box">
+        <div class="balloon-right">
+          <img src="images/teacher/teacher-happy.png" alt="講師回答" style="width: 60px; float: right; margin-left: 10px;">
+          <p><strong>講師：</strong>「看護学校受験の数学は中学レベルの基礎問題が中心です。まず、基本の計算、文章題、図形問題が全問正解できることを目指しましょう。」</p>
+        </div>
+      </div>
+  
+      <div class="balloon-box">
+        <div class="balloon-left">
+          <img src="images/student/student-question.jpg" alt="生徒質問" style="width: 60px; float: left; margin-right: 10px;">
+          <p><strong>学生：</strong>「基本問題が全問正解できれば十分なんですね。でも、応用問題はどうすれば？」</p>
+        </div>
+      </div>
+  
+      <div class="balloon-box">
+        <div class="balloon-right">
+          <img src="images/teacher/teacher-serious.jpg" alt="講師説明" style="width: 60px; float: right; margin-left: 10px;">
+          <p><strong>講師：</strong>「応用問題も、過去問でよく出るパターンを理解し、変形問題にも対応できるように練習することが大切です。全体の80％以上正解できれば、本番でも十分対応可能です。」</p>
+        </div>
+      </div>
+  
+      <div class="balloon-box">
+        <div class="balloon-left">
+          <img src="images/student/student-smile.png" alt="学生納得" style="width: 60px; float: left; margin-right: 10px;">
+          <p><strong>学生：</strong>「なるほど、基礎固めと応用問題の理解がポイントなんですね！」</p>
+        </div>
+      </div>
+  
+      <div class="balloon-box">
+        <div class="balloon-right">
+          <img src="images/teacher/teacher-happy.png" alt="講師喜び" style="width: 60px; float: right; margin-left: 10px;">
+          <p><strong>講師：</strong>「その通りです！基礎がしっかりしていれば、どんな問題にも自信を持って挑めます。頑張りましょう！」</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  <!-- 数学過去問解説メインセクション -->
+  <section class="math-explanation-section fade-in">
+    <div class="container">
+      <h2>数学過去問解説</h2>
+      <p>
+        当サイトでは、看護学校受験の数学過去問を初出掲載し、わかりやすく解説しています。<br>
+        数学の問題は中学レベルの基礎内容も含まれており、基礎がしっかりしていれば十分対応可能です。
+      </p>
+      
+      <!-- 解説例 -->
+      <div class="problem-sample">
+        <h3>【問題例】</h3>
+        <p>
+          −7 + (−2) × 2 + 1
+        </p>
+      </div>
+      
+      <div class="problem-explanation">
+        <h3>【解説】</h3>
+        <ol>
+          <li>
+            <strong>掛け算の計算</strong><br>
+            (−2) × 2 = −4<br>
+            これにより、式は「−7 + (−4) + 1」となります。
+          </li>
+          <li>
+            <strong>加減算の計算</strong><br>
+            まず、−7 + (−4) = −11<br>
+            次に、−11 + 1 = −10
+          </li>
+          <li>
+            <strong>確認結果</strong><br>
+            最終的な答えは <strong>−10</strong> です。
+          </li>
+        </ol>
+        <p>
+          このように、計算の順序や符号の扱いに注意すれば、難しく考える必要はありません。基礎がしっかりしていれば、どんな問題にも自信を持って取り組めます。
+        </p>
+      </div>
+      
+      <!-- 追加問題の解説セクション -->
+      <section class="additional-problem-section fade-in">
+        <div class="container">
+          <h2>追加問題の解説</h2>
+          <div class="problem-sample">
+            <h3>【問題 (2)】</h3>
+            <p>
+              <span class="fraction"><span class="numerator">1</span><span class="denom">4</span></span>
+              ×
+              <span class="fraction"><span class="numerator">2</span><span class="denom">3</span></span>
+              +
+              <span class="fraction"><span class="numerator">8</span><span class="denom">9</span></span>
+            </p>
+          </div>
+          <div class="problem-explanation">
+            <h3>【解説】</h3>
+            <p><strong>掛け算の計算</strong></p>
+            <p>
+              <span class="fraction"><span class="numerator">1</span><span class="denom">4</span></span>
+              ×
+              <span class="fraction"><span class="numerator">2</span><span class="denom">3</span></span>
+              =
+              <span class="fraction"><span class="numerator">1×2</span><span class="denom">4×3</span></span>
+              =
+              <span class="fraction"><span class="numerator">2</span><span class="denom">12</span></span>
+              =
+              <span class="fraction"><span class="numerator">1</span><span class="denom">6</span></span>
+            </p>
+            <p>したがって、式は</p>
+            <p>
+              <span class="fraction"><span class="numerator">1</span><span class="denom">6</span></span>
+              +
+              <span class="fraction"><span class="numerator">8</span><span class="denom">9</span></span>
+            </p>
+            <p><strong>足し算の計算</strong></p>
+            <p>
+              分母をそろえるため、最小公倍数
+              <span class="fraction"><span class="numerator">18</span><span class="denom">18</span></span>
+              を用いて通分します。
+            </p>
+            <p>
+              <span class="fraction"><span class="numerator">1</span><span class="denom">6</span></span>
+              =
+              <span class="fraction"><span class="numerator">3</span><span class="denom">18</span></span>,
+              &nbsp;
+              <span class="fraction"><span class="numerator">8</span><span class="denom">9</span></span>
+              =
+              <span class="fraction"><span class="numerator">16</span><span class="denom">18</span></span>
+            </p>
+            <p>よって、</p>
+            <p>
+              <span class="fraction"><span class="numerator">3</span><span class="denom">18</span></span>
+              +
+              <span class="fraction"><span class="numerator">16</span><span class="denom">18</span></span>
+              =
+              <span class="fraction"><span class="numerator">19</span><span class="denom">18</span></span>
+            </p>
+            <p><strong>結果</strong></p>
+            <p>
+              <span class="fraction"><span class="numerator">19</span><span class="denom">18</span></span>
+
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 問題解いた後の会話セクション -->
+<section class="post-problem-conversation fade-in">
+    <div class="container">
+      <h2>問題解答後の会話</h2>
+  
+      <div class="balloon-box">
+        <div class="balloon-left">
+          <img src="images/student/student-smile.png" alt="学生スマイル" style="width: 60px; float: left; margin-right: 10px;">
+          <p><strong>学生：</strong>「過去問、思ったより簡単でしたね！」</p>
+        </div>
+      </div>
+  
+      <div class="balloon-box">
+        <div class="balloon-right">
+          <img src="images/teacher/teacher-happy.png" alt="講師スマイル" style="width: 60px; float: right; margin-left: 10px;">
+          <p><strong>講師：</strong>「そうだね。基本の計算や考え方がしっかりしていれば、どんな問題も乗り越えられるよ！」</p>
+        </div>
+      </div>
+  
+      <div class="balloon-box">
+        <div class="balloon-left">
+          <img src="images/student/student-smile.png" alt="学生スマイル" style="width: 60px; float: left; margin-right: 10px;">
+          <p><strong>学生：</strong>「もっとたくさん練習すれば、自信もついてくると思います！」</p>
+        </div>
+      </div>
+  
+      <div class="balloon-box">
+        <div class="balloon-right">
+          <img src="images/teacher/teacher-smile.png" alt="講師スマイル" style="width: 60px; float: right; margin-left: 10px;">
+          <p><strong>講師：</strong>「その通り！一緒に基礎をしっかり固めて、どんな問題にも挑戦していこう！」</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+      
+      <!-- 追加のアドバイス -->
+      <div class="advice">
+        <h3>受験生へのアドバイス</h3>
+        <p>
+          看護学校受験の数学は、基礎力があれば十分合格可能です。<br>
+          まずは中学レベルの計算、文章題、図形問題をしっかり復習し、過去問で出題傾向を把握しましょう。
+        </p>
+      </div>
+      
+      <!-- 相談フォームリンク（再掲） -->
+      <div class="consultation-link">
+        <p>不明点や疑問があれば、今すぐ無料相談をご利用ください！</p>
+        <a href="questionnaire.html" class="btn-consultation">無料相談を申し込む</a>
+      </div>
+      
+      <!-- 参考引用 -->
+      <div class="reference">
+        <p>【参考引用】公式過去問題サイト：<a href="https://takasaki-kango.jp/nursing/past/?utm_source=chatgpt.com" target="_blank">https://takasaki-kango.jp/nursing/past/</a></p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- 受験生の声 -->
+  <section class="voice-section fade-in">
+    <div class="container">
+      <h2>受験生の声</h2>
+      <div class="testimonial">
+        <blockquote>
+          「数学が苦手だと思っていましたが、基礎から解説してくれるので安心して学習できました！」
+        </blockquote>
+        <cite>– 受験生 A</cite>
+      </div>
+      <div class="testimonial">
+        <blockquote>
+          「中学レベルの内容が中心なので、普段の勉強で十分対応できると実感しました。」
+        </blockquote>
+        <cite>– 受験生 B</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- 講師からのメッセージ -->
+<section class="instructor-message-section fade-in">
+    <div class="container">
+      <h2>講師からのメッセージ</h2>
+      <p>
+        私たちの講師は、中学内容から勉強をやり直した社会人経験のある看護師です。<br>
+        「勉強が苦手」と感じる気持ちはよく理解しています。<br>
+        だからこそ、あなたの不安に寄り添い、基礎からしっかりと指導します。<br>
+        基礎固めを通して、確かな力を身につけましょう。
+      </p>
+    </div>
+  </section>
+  
+  
+  <!-- 料金比較セクション -->
+  <section class="pricing-section fade-in">
+    <div class="container">
+      <h2><i class="fas fa-table"></i> 他校との料金比較</h2>
+      <div class="responsive-table">
+        <table class="price-table">
+          <thead>
+            <tr>
+              <th>予備校名</th>
+              <th>コース名</th>
+              <th>料金（税込）</th>
+              <th>特徴</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>某予備校A</td>
+              <td>社会人コース</td>
+              <td>113,760円</td>
+              <td>週1回の通学型</td>
+            </tr>
+            <tr>
+              <td>某予備校B</td>
+              <td>ライトコース</td>
+              <td>130,240円</td>
+              <td>自宅学習＋Zoom対応</td>
+            </tr>
+            <tr>
+              <td>某予備校C</td>
+              <td>昼間数学コース</td>
+              <td>195,600円</td>
+              <td>数学中心の通学型</td>
+            </tr>
+            <tr class="highlight-row">
+              <td>当サイト</td>
+              <td>ライトプラン</td>
+              <td>550円/月</td>
+              <td>記事＋過去問解説</td>
+            </tr>
+            <tr class="highlight-row">
+              <td>当サイト</td>
+              <td>プレミアムプラン</td>
+              <td>3,980円/月</td>
+              <td>質問し放題・面接対策</td>
+            </tr>
+            <tr class="highlight-row">
+              <td>当サイト</td>
+              <td>マスターコース</td>
+              <td>7,980円/月</td>
+              <td>週1オンライン個別指導</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+  
+  <!-- 再度相談フォームセクション -->
+  <section class="contact-choice-section fade-in">
+    <div class="container">
+      <div class="talk-bubble">
+        <p><strong>「LINEで気軽に」「フォームでしっかり」</strong><br>すぐに解決、安心のサポート体制！</p>
+      </div>
+      <div class="contact-buttons">
+        <a href="https://lin.ee/RMEsDnD" class="btn-line" target="_blank">
+          <i class="fab fa-line"></i> LINEで相談する
+        </a>
+        <a href="questionnaire.html" class="btn-consultation">
+          <i class="fas fa-envelope"></i> フォームで相談する
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- フッター -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 数学過去問解説サイト - 成功へのパートナー</p>
+    </div>
+  </footer>
+  
+  <script src="script.js"></script>
+</body>
+</html>
