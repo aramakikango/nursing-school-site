@@ -1,0 +1,480 @@
+/* ========== 国家試験合格率の罠 セクション専用スタイル ========== */
+.warning-section {
+    background-color: #fffdf5;
+    border-left: 6px solid #ff9900;
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(255, 153, 0, 0.1);
+    margin: 40px auto;
+    max-width: 900px;
+  }
+  
+  .warning-section h2 {
+    color: #cc3300;
+    font-size: 1.6em;
+    margin-bottom: 15px;
+  }
+  
+  .warning-section h3 {
+    color: #e67300;
+    font-size: 1.2em;
+    margin-top: 30px;
+  }
+  
+  .warning-section p {
+    font-size: 1em;
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 1em;
+  }
+  
+  .warning-section ul {
+    padding-left: 1.5em;
+    list-style-type: disc;
+    color: #444;
+    margin-bottom: 1em;
+  }
+  
+  .warning-section ul li {
+    margin-bottom: 10px;
+  }
+  
+  /* 吹き出し会話 */
+  .warning-section .balloon-box {
+    display: flex;
+    margin: 20px 0;
+    flex-wrap: wrap;
+  }
+  
+  .warning-section .balloon-left,
+  .warning-section .balloon-right {
+    max-width: 600px;
+    padding: 1em;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .warning-section .balloon-left {
+    background-color: #f0f9ff;
+  }
+  
+  .warning-section .balloon-left::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: -20px;
+    border: 10px solid transparent;
+    border-right-color: #f0f9ff;
+  }
+  
+  .warning-section .balloon-right {
+    background-color: #fff4f4;
+    margin-left: auto;
+  }
+  
+  .warning-section .balloon-right::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: -20px;
+    border: 10px solid transparent;
+    border-left-color: #fff4f4;
+  }
+  
+  .warning-section .balloon-left p,
+  .warning-section .balloon-right p {
+    margin: 0;
+    line-height: 1.6;
+  }
+  
+  .warning-section .balloon-left p strong,
+  .warning-section .balloon-right p strong {
+    display: inline-block;
+    margin-bottom: 0.3em;
+    color: #333;
+  }
+  
+  /* CTA ボタン */
+  .warning-section .cta-center {
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  .warning-section .btn-line {
+    background-color: #00c300;
+    color: white;
+    padding: 14px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    display: inline-block;
+    transition: background-color 0.3s;
+  }
+  
+  .warning-section .btn-line:hover {
+    background-color: #00a800;
+  }
+  
+  /* スマホ対応 */
+  @media (max-width: 600px) {
+    .warning-section {
+      padding: 20px 15px;
+    }
+  
+    .warning-section h2 {
+      font-size: 1.4em;
+    }
+  
+    .warning-section h3 {
+      font-size: 1.1em;
+    }
+  
+    .warning-section .balloon-box {
+      display: block;
+    }
+  
+    .warning-section .balloon-left,
+    .warning-section .balloon-right {
+      max-width: 100%;
+      margin: 10px 0;
+    }
+  
+    .warning-section .balloon-left::before,
+    .warning-section .balloon-right::before {
+      display: none;
+    }
+  }
+  /* 会話アイコン画像（左・右共通） */
+.icon-left,
+.icon-right {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+  float: left;
+}
+
+/* 講師側の吹き出しアイコン */
+.icon-right {
+  float: right;
+  margin-left: 10px;
+  margin-right: 0;
+}
+.visual-header {
+    background-color: #0066cc;
+    padding: 100px 20px;
+    text-align: center;
+    color: white;
+  }
+  
+  .visual-header h1 {
+    font-size: 2.4em;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .visual-header .subtitle {
+    font-size: 1.4em;
+    color: #ffffff;
+    margin-top: 10px;
+  }
+  @media screen and (max-width: 600px) {
+    .visual-header {
+      padding: 60px 10px;
+    }
+  
+    .visual-header h1 {
+      font-size: 1.8em;
+    }
+  
+    .visual-header .subtitle {
+      font-size: 1.1em;
+    }
+  }
+/* ヒーロー導入セクション：青背景＋白文字 */
+.hero-warning-intro {
+    background-color: #0066cc !important; /* ← 強制適用 */
+    color: #ffffff;
+    text-align: center;
+    padding: 100px 20px;
+    margin: 0;
+    border: none;
+  }
+  
+  .hero-warning-intro .container {
+    background: transparent !important; /* ← 白背景を打ち消し */
+    padding: 0;
+    margin: 0 auto;
+  }
+  
+  .hero-warning-intro h1,
+.hero-title {
+  font-size: 2.8em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #ffffff;
+  display: block;
+}
+.testimonial-section {
+    background-color: #f0f8ff;
+    padding: 60px 20px;
+    border-top: 6px solid #00c3c3;
+    border-radius: 0 0 12px 12px;
+  }
+  
+  .testimonial-section h2 {
+    color: #0066cc;
+    font-size: 1.6em;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .testimonial-section .cta-center {
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  .testimonial-section .btn-line {
+    background-color: #00c300;
+    color: white;
+    padding: 14px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: inline-block;
+    transition: background-color 0.3s;
+    max-width: 320px;
+  }
+  
+  .testimonial-section .btn-line:hover {
+    background-color: #00a800;
+  }
+  .faq-section {
+    background-color: #f9fbff;
+    padding: 60px 20px;
+    border-top: 6px solid #0066cc;
+    border-radius: 0 0 12px 12px;
+  }
+  
+  .faq-section h2 {
+    color: #0066cc;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.6em;
+  }
+  
+  .faq-item {
+    margin-bottom: 30px;
+  }
+  
+  .faq-question {
+    font-weight: bold;
+    color: #333;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+  }
+  
+  .faq-answer {
+    color: #555;
+    line-height: 1.7;
+    padding-left: 1em;
+  }
+  
+  .faq-section .cta-center {
+    margin-top: 40px;
+    text-align: center;
+  }
+  .reality-section {
+    background-color: #fff4f4;
+    border-left: 6px solid #cc3300;
+    padding: 60px 20px;
+    margin: 60px auto;
+    border-radius: 12px;
+  }
+  
+  .reality-section h2 {
+    color: #cc3300;
+    font-size: 1.6em;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .reality-section h3 {
+    color: #e67300;
+    font-size: 1.2em;
+    margin-top: 30px;
+  }
+  
+  .reality-section ul {
+    padding-left: 1.5em;
+    list-style-type: disc;
+    color: #444;
+    margin-bottom: 1em;
+  }
+  
+  .reality-section ul li {
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  
+  .reality-section p {
+    color: #333;
+    font-size: 1em;
+    line-height: 1.8;
+  }
+  
+  .reality-section .cta-center {
+    margin-top: 30px;
+    text-align: center;
+  }
+  .checklist-section {
+    background-color: #f7fcff;
+    padding: 60px 20px;
+    border-top: 6px solid #00aaff;
+    border-radius: 12px;
+    margin: 60px auto;
+  }
+  
+  .checklist-section h2 {
+    color: #007acc;
+    font-size: 1.6em;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .checklist-section p {
+    font-size: 1em;
+    color: #333;
+    line-height: 1.8;
+    text-align: center;
+  }
+  
+  ul.checklist {
+    list-style: none;
+    padding: 0;
+    max-width: 700px;
+    margin: 30px auto;
+  }
+  
+  ul.checklist li {
+    background: #e6f5ff;
+    border-left: 5px solid #00aaff;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    font-size: 1em;
+    color: #333;
+  }
+  
+  .checklist-section .cta-center {
+    margin-top: 30px;
+    text-align: center;
+  }
+  .summary-section {
+    background-color: #fdfdfd;
+    padding: 60px 20px;
+    border-top: 6px solid #007acc;
+    border-radius: 12px;
+    margin-top: 60px;
+  }
+  
+  .summary-section h2 {
+    color: #007acc;
+    font-size: 1.6em;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .summary-section p {
+    font-size: 1em;
+    color: #333;
+    line-height: 1.8;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  ul.summary-points {
+    list-style: none;
+    padding: 0;
+    margin: 20px auto;
+    max-width: 600px;
+    text-align: left;
+  }
+  
+  ul.summary-points li {
+    background: #eef8ff;
+    padding: 12px 16px;
+    margin-bottom: 10px;
+    border-left: 5px solid #00aaff;
+    border-radius: 5px;
+    font-size: 1em;
+    color: #333;
+  }
+  
+  .summary-section .cta-center {
+    margin-top: 30px;
+    text-align: center;
+  }
+  .contact-options {
+    background-color: #f4faff;
+    padding: 60px 20px;
+    border-top: 6px solid #00aaff;
+    border-radius: 12px;
+    text-align: center;
+  }
+  
+  .contact-options h2 {
+    font-size: 1.6em;
+    color: #007acc;
+    margin-bottom: 15px;
+  }
+  
+  .contact-options p {
+    color: #333;
+    font-size: 1em;
+    margin-bottom: 30px;
+  }
+  
+  .contact-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .btn-line,
+  .btn-form {
+    padding: 14px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    display: inline-block;
+    transition: background-color 0.3s;
+    min-width: 240px;
+    text-align: center;
+  }
+  
+  .btn-line {
+    background-color: #00c300;
+    color: white;
+  }
+  
+  .btn-line:hover {
+    background-color: #00a800;
+  }
+  
+  .btn-form {
+    background-color: #ffffff;
+    color: #007acc;
+    border: 2px solid #007acc;
+  }
+  
+  .btn-form:hover {
+    background-color: #e6f4ff;
+  }
+  

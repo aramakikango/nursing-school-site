@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>英語のやさしい過去問チャレンジ｜看護受験サポート</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      line-height: 1.7;
+      margin: 0;
+      padding: 0;
+      background: #f4f8fc;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      background: white;
+    }
+    .hero {
+      background-color: #0066cc;
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .hero h1 {
+      margin-bottom: 10px;
+    }
+    .intro {
+      background: #fff;
+      padding: 30px;
+      margin-top: 30px;
+      border-left: 5px solid #66b2ff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .question {
+      margin: 30px 0;
+      padding: 20px;
+      background: #f9f9f9;
+      border-left: 5px solid #66b2ff;
+    }
+    .question h3 {
+      margin-top: 0;
+      color: #0066cc;
+    }
+    .answer {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #2a7f3f;
+    }
+    .explanation {
+      margin-top: 5px;
+      color: #333;
+    }
+    .cta {
+      background: #e6f2ff;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 40px;
+    }
+    .btn-line {
+      display: inline-block;
+      background-color: #00c300;
+      color: white;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+    .section-box {
+      margin-top: 50px;
+      padding: 30px;
+      background: #fffef5;
+      border-left: 5px solid #ffc107;
+    }
+    .section-box h2 {
+      color: #cc8500;
+    }
+    .testimonial-box {
+      background: #f4f9ff;
+      padding: 20px;
+      border-left: 5px solid #66b2ff;
+      margin-top: 30px;
+    }
+    .balloon-box {
+      display: flex;
+      margin: 20px 0;
+      align-items: flex-start;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+    .balloon-box:nth-child(1) { animation-delay: 0.2s; }
+    .balloon-box:nth-child(2) { animation-delay: 0.4s; }
+    .balloon-box:nth-child(3) { animation-delay: 0.6s; }
+    .balloon-box:nth-child(4) { animation-delay: 0.8s; }
+    .balloon-box:nth-child(5) { animation-delay: 1s; }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .balloon-left,
+    .balloon-right {
+      max-width: 600px;
+      padding: 1em;
+      border-radius: 10px;
+      position: relative;
+      background-color: #f0f9ff;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: flex-start;
+    }
+    .balloon-left {
+      margin-right: auto;
+    }
+    .balloon-right {
+      margin-left: auto;
+      background-color: #fff4f4;
+    }
+    .balloon-left::before {
+      content: '';
+      position: absolute;
+      top: 15px;
+      left: -20px;
+      border: 10px solid transparent;
+      border-right-color: #f0f9ff;
+    }
+    .balloon-right::before {
+      content: '';
+      position: absolute;
+      top: 15px;
+      right: -20px;
+      border: 10px solid transparent;
+      border-left-color: #fff4f4;
+    }
+    .balloon-box img {
+      width: 80px;
+      height: auto;
+      border-radius: 8px;
+      margin-right: 15px;
+    }
+    .reveal-btn {
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-top: 10px;
+}
+.reveal-btn:hover {
+  background-color: #004c99;
+}
+.answer-box {
+  display: none;
+  margin-top: 10px;
+  animation: fadeIn 0.4s ease-in;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <h1>英語、ちょっと苦手でも大丈夫。</h1>
+    <p>まずはやさしい問題で「できた！」を体験しよう。</p>
+  </div>
+
+  <div class="container">
+    <div class="intro">
+      <h2>なぜ過去問から始めるの？</h2>
+
+      <div class="balloon-box">
+        <div class="balloon-left">
+          <img src="images/student/student-tired.jpg" alt="生徒困っている">
+          <p><strong>生徒：</strong><br>「英語、何からやればいいかわかりません…単語も文法も不安で…」</p>
+        </div>
+      </div>
+
+      <div class="balloon-box">
+        <div class="balloon-right">
+          <img src="images/teacher/teacher-smile.png" alt="先生説明">
+          <p><strong>先生：</strong><br>「まずは過去問を見てみましょう。どんな問題が出るのかを知ることが大事なんです」</p>
+        </div>
+      </div>
+
+      <div class="balloon-box">
+        <div class="balloon-left">
+          <img src="images/student/student-think.png" alt="生徒考える">
+          <p><strong>生徒：</strong><br>「えっ、でも難しい英文が出るんですよね？」</p>
+        </div>
+      </div>
+
+      <div class="balloon-box">
+        <div class="balloon-right">
+          <img src="images/teacher/teacher-smile.png" alt="先生笑顔">
+          <p><strong>先生：</strong><br>「実は、中学英語が中心なんですよ。'nurse' や 'Who is he?' のような基礎的な内容が多いです」</p>
+        </div>
+      </div>
+
+      <div class="balloon-box">
+        <div class="balloon-left">
+          <img src="images/student/student-smile.png" alt="生徒安心">
+          <p><strong>生徒：</strong><br>「それなら私にもできるかも…！ちょっと安心しました」</p>
+        </div>
+      </div>
+
+      <p style="margin-top: 20px;">このページでは、実際に看護学校の過去問から「やさしい英語問題」を抜粋して紹介しています。<br>まずは一緒にチャレンジしてみましょう！</p>
+    </div>
+
+  <div class="container">
+    <h2>昭和医科大学附属看護専門学校の過去問より</h2>
+
+    <div class="question">
+        <h3>(1) This is not my pen but (  ).</h3>
+        <p>1. he　2. his　3. him　4. himself</p>
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'; this.style.display='none';">
+          ▶ 解答を見る
+        </button>
+        <div class="answer-box">
+          <p class="answer">正解：his</p>
+          <p class="explanation">「my pen」と対比させるため、所有代名詞の "his" が適切です。省略構文で「This is not my pen but (it is) his」となります。</p>
+        </div>
+      </div>
+      
+
+      <div class="question">
+        <h3>(2) Mary is not famous. (  ) people know about her.</h3>
+        <p>1. Few　2. Many　3. Much　4. Little</p>
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'; this.style.display='none';">
+          ▶ 解答を見る
+        </button>
+        <div class="answer-box">
+          <p class="answer">正解：Few</p>
+          <p class="explanation">「有名ではない」という否定的な状態を表すため、「ほとんど〜いない」という意味の "few" が適当です。</p>
+        </div>
+      </div>
+      
+      <div class="question">
+        <h3>(3) (  ) wrote this book?</h3>
+        <p>1. How　2. When　3. Who　4. Where</p>
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'; this.style.display='none';">
+          ▶ 解答を見る
+        </button>
+        <div class="answer-box">
+          <p class="answer">正解：Who</p>
+          <p class="explanation">書いた人を尋ねる主語としての疑問詞 "Who" が正しい選択です。</p>
+        </div>
+      </div>
+      
+      <div class="question">
+        <h3>(4) How many flowers (  ) in the garden?</h3>
+        <p>1. are there　2. there is　3. is there　4. there are</p>
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'; this.style.display='none';">
+          ▶ 解答を見る
+        </button>
+        <div class="answer-box">
+          <p class="answer">正解：are there</p>
+          <p class="explanation">「How many + 複数名詞」で数を尋ねるときは「are there」が正しい文型です。</p>
+        </div>
+      </div>
+      
+      <div class="question">
+        <h3>(5) The girls (  ) tennis are Cathy and her friends.</h3>
+        <p>1. play　2. to play　3. playing　4. played</p>
+        <button class="reveal-btn" onclick="this.nextElementSibling.style.display='block'; this.style.display='none';">
+          ▶ 解答を見る
+        </button>
+        <div class="answer-box">
+          <p class="answer">正解：playing</p>
+          <p class="explanation">「テニスをしている女の子たち」という意味を表現するため、現在分詞 \"playing\" を用いて「The girls playing tennis」とします。</p>
+        </div>
+      </div>
+      
+
+    <div class="balloon-box">
+        <div class="balloon-left">
+          <img src="images/student/student-tired.jpg" alt="生徒困っている" style="width: 100px; height: auto; margin-right: 10px;">
+          <p><strong>生徒：</strong><br>「先生…正直、英語が全然わからないんです。単語も文法も、何が何だか…」</p>
+        </div>
+      </div>
+      
+      <div class="balloon-box">
+        <div class="balloon-right">
+          <img src="images/teacher/teacher-smile.png" alt="先生励まし" style="width: 100px; height: auto; margin-left: 10px;">
+          <p><strong>先生：</strong><br>「わかります。私も学生時代、英語は大の苦手でした。でも看護受験の英語は、中学レベルが中心なんです。」</p>
+        </div>
+      </div>
+      
+      <div class="balloon-box">
+        <div class="balloon-left">
+          <img src="images/student/student-think.png" alt="生徒考える" style="width: 100px; height: auto; margin-right: 10px;">
+          <p><strong>生徒：</strong><br>「えっ？高校の難しい英文とか出ないんですか？」</p>
+        </div>
+      </div>
+      
+      <div class="balloon-box">
+        <div class="balloon-right">
+          <img src="images/teacher/teacher-smile.png" alt="先生説明" style="width: 100px; height: auto; margin-left: 10px;">
+          <p><strong>先生：</strong><br>「基本的には出ません！出るのは 'nurse'（看護師）とか、'Who is he?' みたいな簡単な問題が中心。中1〜中2レベルで大丈夫です。」</p>
+        </div>
+      </div>
+      
+      <div class="balloon-box">
+        <div class="balloon-left">
+          <img src="images/student/student-smile.png" alt="生徒安心" style="width: 100px; height: auto; margin-right: 10px;">
+          <p><strong>生徒：</strong><br>「ちょっと安心しました…。先生が言うなら、やってみようかな…！」</p>
+        </div>
+      </div>
+      <section class="section-box">
+        <h2>英語が苦手な人、こんなことで悩んでませんか？</h2>
+        <ul>
+          <li>英文を見るだけで拒否反応が出る</li>
+          <li>be動詞と一般動詞の違いがわからない</li>
+          <li>単語を覚えてもすぐ忘れる</li>
+          <li>英語＝難しいものだと思ってる</li>
+        </ul>
+        <p>実は、これ全部「あるある」です😊<br>でも看護入試では中学英語が中心。文法や長文より、“慣れること”が大事です。</p>
+      </section>
+      
+
+    <div class="section-box">
+      <h2>英語が苦手な人のための、はじめの一歩</h2>
+      <ul>
+        <li>まずは中学英単語から。1日3つでもOK！</li>
+        <li>文法は「主語＋動詞」から理解するのが近道です。</li>
+        <li>選択肢を「声に出して読む」だけでも効果あり！</li>
+      </ul>
+      <p>「私にもできるかも」そんな気持ちを大切にしましょう😊</p>
+    </div>
+
+    <div class="testimonial-box">
+      <h2>英語が苦手だった合格者の声</h2>
+      <p><strong>32歳・主婦：</strong><br>「英語が一番不安でしたが、“選択肢の感覚”がわかるようになってきて、むしろ得点源に！」</p>
+      <p><strong>29歳・社会人受験：</strong><br>「文法は忘れてましたが、マオズでやった“声に出して読む”だけでも効果ありました！」</p>
+    </div>
+
+    <div class="cta">
+      <h2>「私でもできるかも」と思ったあなたへ</h2>
+      <p>次はあなたのペースで受験準備をはじめてみませんか？</p>
+      <a href="https://lin.ee/RMEsDnD" class="btn-line" target="_blank">LINEで相談する</a>
+    </div>
+  </div>
+</body>
+</html>
