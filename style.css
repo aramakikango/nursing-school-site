@@ -434,4 +434,64 @@ section:not(.hero-banner) {
     border: 10px solid transparent;
     border-left-color: #fff4f4;
   }
+  .social-proof-section {
+    background-color: #f9f9ff;
+    padding: 40px 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 102, 204, 0.05);
+    margin: 40px auto;
+    max-width: 900px;
+  }
+  .social-proof-section h2 {
+    color: #0066cc;
+    margin-bottom: 15px;
+  }
+  .social-proof-section p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #333;
+  }
+  .blue-hero {
+    background-color: #0066cc;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 0;
+  }
+  
+  .blue-hero h1 {
+    font-size: 2em;
+    color: white;
+    margin-bottom: 10px;
+  }
+  
+  .blue-hero .subtitle {
+    font-size: 1.2em;
+    color: #e0e0e0;
+  }
+  .blue-hero {
+    background-color: #0066cc;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 0;
+  }
+  
+  .blue-hero h1,
+  .blue-hero .subtitle {
+    color: white;
+  }
+  .blue-hero {
+    background-color: #0066cc;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 0;
+  }
+  
+  .blue-hero h1,
+  .blue-hero .subtitle {
+    color: white;
+  }
+  
   
