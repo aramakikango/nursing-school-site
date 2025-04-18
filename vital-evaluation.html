@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>バイタル評価チェッカー</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .vital-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .card-box {
+      background: #ffffff;
+      border-left: 6px solid #0066cc;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+    .card-box h3 {
+      margin-top: 0;
+      color: #0066cc;
+    }
+    .result {
+      font-weight: bold;
+      font-size: 1.1em;
+      color: #333;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1em;
+    }
+    .form-grid label {
+      display: block;
+      font-weight: bold;
+    }
+    .form-grid input,
+    .form-grid select {
+      width: 100%;
+      padding: 0.6em;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    .btn-evaluate {
+      margin-top: 20px;
+      padding: 12px 20px;
+      background-color: #0066cc;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .btn-evaluate:hover {
+      background-color: #004a99;
+    }
+
+    /* モバイル対応 */
+    @media screen and (max-width: 600px) {
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+<section class="vital-container">
+  <div class="card-box">
+    <h3>📘 評価結果の解説</h3>
+    <ul>
+      <li><strong>ショックインデックス（SI）</strong>：脈拍 ÷ 収縮期血圧で求める指標。0.5〜0.9で注意、1.0以上でショックの可能性があります。</li>
+      <li><strong>GCS（グラスゴー・コーマ・スケール）</strong>：意識レベルをE（開眼）、V（言語）、M（運動）の3反応で評価。合計点が低いほど重度の意識障害を示します。</li>
+      <li><strong>NEWS（National Early Warning Score）</strong>：複数のバイタルサインから緊急度を評価。スコアが高いほど医療的対応が必要になります。</li>
+      <li><strong>qSOFA</strong>：敗血症のリスク評価。呼吸数、意識レベル、血圧の3項目でスクリーニングし、2点以上で医師への報告が推奨されます。</li>
+    </ul>
+  </div>
+  <h1>バイタル評価チェッカー</h1>
+  <form id="vitalForm">
+    <div class="form-grid">
+      <div>
+        <label>体温（℃）</label>
+        <input type="number" step="0.1" id="temp" required>
+      </div>
+      <div>
+        <label>脈拍数（回/分）</label>
+        <input type="number" id="pulse" required>
+      </div>
+      <div>
+        <label>呼吸数（回/分）</label>
+        <input type="number" id="rr" required>
+      </div>
+      <div>
+        <label>収縮期血圧（mmHg）</label>
+        <input type="number" id="bp" required>
+      </div>
+      <div>
+        <label>SpO2（%）</label>
+        <input type="number" id="spo2" required>
+      </div>
+      <div>
+        <label>酸素投与あり？</label>
+        <select id="oxygen">
+          <option value="no">なし</option>
+          <option value="yes">あり</option>
+        </select>
+      </div>
+      <div>
+        <label>GCS - 開眼反応（E）<br><small>4:自発, 3:呼びかけで開眼, 2:痛み刺激で開眼, 1:開眼なし</small></label>
+        <input type="number" id="gcsE" min="1" max="4" required>
+      </div>
+      <div>
+        <label>GCS - 言語反応（V）<br><small>5:見当識あり, 4:混乱, 3:不適当な言語, 2:理解不能, 1:反応なし</small></label>
+        <input type="number" id="gcsV" min="1" max="5" required>
+      </div>
+      <div>
+        <label>GCS - 運動反応（M）<br><small>6:命令に従う, 5:痛みの部位を定位, 4:逃避, 3:屈曲, 2:伸展, 1:反応なし</small></label>
+        <input type="number" id="gcsM" min="1" max="6" required>
+      </div>
+      <div>
+        <label>AVPU</label>
+        <select id="avpu">
+          <option value="A">A（覚醒）</option>
+          <option value="V">V（呼びかけ反応）</option>
+          <option value="P">P（痛み刺激反応）</option>
+          <option value="U">U（無反応）</option>
+        </select>
+      </div>
+    </div>
+    <button type="submit" class="btn-evaluate">評価する</button>
+  </form>
+  <div id="resultArea"></div>
+</section>
+</body>
+</html>
