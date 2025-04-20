@@ -6,105 +6,20 @@
   <title>バイタル評価チェッカー</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    body {
-      background: #f4f8fc;
-      font-family: 'Segoe UI', sans-serif;
-    }
-    .vital-container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 30px;
-    }
-    .card-box {
-      background: #ffffff;
-      border-left: 8px solid #007acc;
-      border-radius: 14px;
-      padding: 24px;
-      margin-bottom: 24px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .card-box:hover {
-      transform: scale(1.01);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-    }
-    .card-box h3 {
-      margin-top: 0;
-      color: #007acc;
-      font-size: 1.3em;
-      border-bottom: 1px solid #e0e0e0;
-      padding-bottom: 6px;
-    }
-    .result {
-      font-weight: bold;
-      font-size: 1.15em;
-      color: #333;
-      padding-top: 5px;
-    }
-    .form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.2em;
-    }
-    .form-grid label {
-      display: block;
-      font-weight: bold;
-      margin-bottom: 4px;
-    }
-    .form-grid input,
-    .form-grid select {
-      width: 100%;
-      padding: 0.6em;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      background: #fdfdfd;
-      box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
-    }
-    /* 置き換え */
-.btn-evaluate {
-  position: relative;
-  display: inline-block;
-  padding: 14px 40px;
-  font-size: 1.1em;
-  font-weight: bold;
-  color: #fff;
-  background: linear-gradient(135deg, #34c759 0%, #28a745 100%); /* グリーングラデ */
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(40,167,69,0.35);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-/* リップル風ハイライト */
-.btn-evaluate::after {
-  content: "";
-  position: absolute;
-  top: 0; left: -100%;
-  width: 100%; height: 100%;
-  background: rgba(255,255,255,0.25);
-  transform: skewX(-20deg);
-  transition: left 0.45s ease;
-}
-
-.btn-evaluate:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 30px rgba(40,167,69,0.45);
-}
-
-.btn-evaluate:hover::after {
-  left: 100%;
-}
-  
-/* 追加 */
-.btn-wrapper {
-  display: flex;
-  justify-content: center; /* 水平方向センター */
-  margin-top: 32px;        /* 上に少し余白 */
-}
-
-
+    body {background:#f4f8fc;font-family:'Segoe UI',sans-serif}
+    .vital-container{max-width:900px;margin:0 auto;padding:30px}
+    .card-box{background:#fff;border-left:8px solid #007acc;border-radius:14px;padding:24px;margin-bottom:24px;box-shadow:0 4px 15px rgba(0,0,0,.08);transition:transform .3s ease,box-shadow .3s ease}
+    .card-box:hover{transform:scale(1.01);box-shadow:0 6px 18px rgba(0,0,0,.12)}
+    .card-box h3{margin-top:0;color:#007acc;font-size:1.3em;border-bottom:1px solid #e0e0e0;padding-bottom:6px}
+    .result{font-weight:bold;font-size:1.15em;color:#333;padding-top:5px}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2em}
+    .form-grid label{display:block;font-weight:bold;margin-bottom:4px}
+    .form-grid input,.form-grid select{width:100%;padding:.6em;border:1px solid #ccc;border-radius:6px;background:#fdfdfd;box-shadow:inset 0 1px 2px rgba(0,0,0,.05)}
+    .btn-evaluate{position:relative;display:inline-block;padding:14px 40px;font-size:1.1em;font-weight:bold;color:#fff;background:linear-gradient(135deg,#34c759 0%,#28a745 100%);border:none;border-radius:50px;cursor:pointer;overflow:hidden;box-shadow:0 8px 20px rgba(40,167,69,.35);transition:transform .2s ease,box-shadow .2s ease}
+    .btn-evaluate::after{content:"";position:absolute;top:0;left:-100%;width:100%;height:100%;background:rgba(255,255,255,.25);transform:skewX(-20deg);transition:left .45s ease}
+    .btn-evaluate:hover{transform:scale(1.05);box-shadow:0 12px 30px rgba(40,167,69,.45)}
+    .btn-evaluate:hover::after{left:100%}
+    .btn-wrapper{display:flex;justify-content:center;margin-top:32px}
   </style>
 </head>
 <body>
@@ -112,199 +27,129 @@
   <div class="card-box">
     <h3>📘 評価結果の解説</h3>
     <ul>
-      <li><strong>ショックインデックス（SI）</strong>：脈拍 ÷ 収縮期血圧で求める指標。0.5〜0.9で注意、1.0以上でショックの可能性があります。</li>
-      <li><strong>GCS（グラスゴー・コーマ・スケール）</strong>：意識レベルをE（開眼）、V（言語）、M（運動）の3反応で評価。合計点が低いほど重度の意識障害を示します。</li>
-      <li><strong>NEWS（National Early Warning Score）</strong>：複数のバイタルサインから緊急度を評価。スコアが高いほど医療的対応が必要になります。</li>
-      <li><strong>qSOFA</strong>：敗血症のリスク評価。呼吸数、意識レベル、血圧の3項目でスクリーニングし、2点以上で医師への報告が推奨されます。</li>
+      <li><strong>ショックインデックス（SI）</strong>＝脈拍 / 収縮期血圧</li>
+      <li><strong>脈圧（PP）</strong>＝収縮期血圧 − 拡張期血圧</li>
+      <li><strong>脈圧比（PPR）</strong>＝PP / 収縮期血圧</li>
+      <li><strong>GCS</strong>＝E+V+M</li>
+      <li><strong>NEWS</strong>＝早期警戒スコア</li>
+      <li><strong>qSOFA</strong>＝敗血症スクリーニング</li>
     </ul>
   </div>
+
   <h1>バイタル評価チェッカー</h1>
   <form id="vitalForm">
     <div class="form-grid">
-      <div>
-        <label>尿量（ml/h）</label>
-        <input type="number" id="urine" min="0">
-      </div>
-      <div>
-        <label>体温（℃）</label>
-        <input type="number" step="0.1" id="temp" required>
-      </div>
-      <div>
-        <label>脈拍数（回/分）</label>
-        <input type="number" id="pulse" required>
-      </div>
-      <div>
-        <label>呼吸数（回/分）</label>
-        <input type="number" id="rr" required>
-      </div>
-      <div>
-        <label>拡張期血圧（mmHg）</label>
-        <input type="number" id="dap" required>
-      </div>
-      <div>
-        <label>収縮期血圧（mmHg）</label>
-        <input type="number" id="bp" required>
-      </div>
-      <div>
-        <label>SpO2（%）</label>
-        <input type="number" id="spo2" required>
-      </div>
-      <div>
-        <label>酸素投与あり？</label>
-        <select id="oxygen">
-          <option value="no">なし</option>
-          <option value="yes">あり</option>
-        </select>
-      </div>
-      <div>
-        <label>GCS - 開眼反応（E）<br><small>4:自発, 3:呼びかけで開眼, 2:痛み刺激で開眼, 1:開眼なし</small></label>
-        <input type="number" id="gcsE" min="1" max="4" required>
-      </div>
-      <div>
-        <label>GCS - 言語反応（V）<br><small>5:見当識あり, 4:混乱, 3:不適当な言語, 2:理解不能, 1:反応なし</small></label>
-        <input type="number" id="gcsV" min="1" max="5" required>
-      </div>
-      <div>
-        <label>GCS - 運動反応（M）<br><small>6:命令に従う, 5:痛みの部位を定位, 4:逃避, 3:屈曲, 2:伸展, 1:反応なし</small></label>
-        <input type="number" id="gcsM" min="1" max="6" required>
-      </div>
-      <div>
-        <label>AVPU</label>
-        <select id="avpu">
-          <option value="A">A（覚醒）</option>
-          <option value="V">V（呼びかけ反応）</option>
-          <option value="P">P（痛み刺激反応）</option>
-          <option value="U">U（無反応）</option>
-        </select>
-      </div>
+      <div><label>尿量（ml/h）</label><input type="number" id="urine" min="0"></div>
+      <div><label>体温（℃）</label><input type="number" step="0.1" id="temp"></div>
+      <div><label>脈拍数（回/分）</label><input type="number" id="pulse"></div>
+      <div><label>呼吸数（回/分）</label><input type="number" id="rr"></div>
+      <div><label>拡張期血圧（mmHg）</label><input type="number" id="dap"></div>
+      <div><label>収縮期血圧（mmHg）</label><input type="number" id="bp"></div>
+      <div><label>SpO₂（%）</label><input type="number" id="spo2"></div>
+      <div><label>酸素投与あり？</label><select id="oxygen"><option value="no">なし</option><option value="yes">あり</option></select></div>
+      <div><label>GCS - E</label><input type="number" id="gcsE" min="1" max="4"></div>
+      <div><label>GCS - V</label><input type="number" id="gcsV" min="1" max="5"></div>
+      <div><label>GCS - M</label><input type="number" id="gcsM" min="1" max="6"></div>
+      <div><label>AVPU</label><select id="avpu"><option value="A">A</option><option value="V">V</option><option value="P">P</option><option value="U">U</option></select></div>
     </div>
-    
-    <div class="btn-wrapper">
-      <button type="submit" class="btn-evaluate">評価する</button>
-    </div>
-<div id="resultArea"></div>
-  
-  <div class="card-box" style="font-size: 0.9em; color: #555;">
-    <h3>📝 評価指標の計算式（参考）</h3>
-    <ul>
-      <li><strong>ショックインデックス（SI）</strong> ＝ 脈拍 ÷ 収縮期血圧（SBP）</li>
-      <li><strong>拡張期ショックインデックス（DSI）</strong> ＝ 脈拍 ÷ 拡張期血圧（DAP）</li>
-      <li><strong>平均動脈圧（MAP）</strong> ＝ （収縮期血圧 + 2 × 拡張期血圧）÷ 3</li>
-      <li><strong>GCS</strong> ＝ 開眼反応（E）＋ 言語反応（V）＋ 運動反応（M）</li>
-      <li><strong>qSOFA</strong> ＝ 呼吸数≧22, 意識レベル低下, 収縮期血圧≦100 → 各1点</li>
-      <li><strong>NEWS</strong> ＝ 呼吸数・SpO2・体温・血圧・脈拍・意識レベル からのスコア合計</li>
-    </ul>
-  </div>
-  <script>
-    document.getElementById("vitalForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      const bp    = parseInt(document.getElementById("bp").value);
-      const pulse = parseInt(document.getElementById("pulse").value);
-      const rr    = parseInt(document.getElementById("rr").value);
-      const spo2  = parseInt(document.getElementById("spo2").value);
-      const oxygen= document.getElementById("oxygen").value;
-      const temp  = parseFloat(document.getElementById("temp").value);
-      const gcsE  = parseInt(document.getElementById("gcsE").value);
-      const gcsV  = parseInt(document.getElementById("gcsV").value);
-      const gcsM  = parseInt(document.getElementById("gcsM").value);
-      const avpu  = document.getElementById("avpu").value;
-      const urine = parseInt(document.getElementById("urine").value);
-      const dap   = parseInt(document.getElementById("dap").value);  // 追加
-  
-      const gcs = gcsE + gcsV + gcsM;
-  
-      // ショックインデックス
-      const si = (pulse / bp).toFixed(2);
-      let si_result = si < 0.5 ? "正常" : si < 1.0 ? "軽度異常" : "ショックの可能性";
-  
-      // GCS評価
-      let gcs_result =
-        gcs >= 15 ? "意識清明" :
-        gcs >= 13 ? "軽度意識障害" :
-        gcs >= 9  ? "中等度意識障害" : "重度意識障害";
-  
-      // NEWSスコア
-      let news_score = 0;
-      if (rr <= 8 || rr >= 25) news_score += 3;
-      else if (rr >= 21)         news_score += 2;
-      else if (rr >= 9 && rr <= 11) news_score += 1;
-  
-      if (spo2 <= 91) news_score += 3;
-      else if (spo2 <= 93) news_score += 2;
-      else if (spo2 <= 95) news_score += 1;
-      if (oxygen === "yes") news_score += 2;
-  
-      if (temp < 35 || temp >= 39.1) news_score += 3;
-      else if (temp >= 38.1)         news_score += 1;
-  
-      if (bp <= 90)  news_score += 3;
-      else if (bp <= 100) news_score += 2;
-  
-      if (avpu !== "A") news_score += 3;
-  
-      let news_result = 
-        news_score <= 4 ? "通常観察" :
-        news_score <= 6 ? "医師に連絡を要す" : "緊急対応が必要";
-  
-      // qSOFA
-      let qsofa = 0;
-      if (rr >= 22) qsofa++;
-      if (gcs < 15) qsofa++;
-      if (bp <= 100) qsofa++;
-      let qsofa_result = qsofa >= 2 ? "敗血症の可能性あり" : "リスク低い";
-  
-      // 拡張期ショックインデックス（DSI）
-      const dsi = (pulse / dap).toFixed(2);
-      let dsi_result =
-        dsi >= 3.0 ? "危機的ショック状態（昇圧剤要検討）" :
-        dsi >= 2.0 ? (dap > 50 ? "敗血症性ショックの疑い" : "要注意：DAP低下") :
-        dsi >= 1.0 ? "軽度リスク（経過観察）" : "正常範囲";
-  
-      // 平均動脈圧（MAP）
-      const map = ((bp + 2 * dap) / 3).toFixed(1);
-      let map_result = map < 65 ? "低灌流リスクあり（MAP < 65）" : "正常";
-  
-      // 尿量
-      let urine_result = "";
-      if (!isNaN(urine)) {
-        urine_result = `
-        <div class="card-box">
-          <h3>🚻 尿量</h3>
-          <p class="result">${urine} ml/h → ${urine < 50 ? '少尿（注意）' : '正常'}</p>
-        </div>`;
-      }
-  
-      // 結果表示
-      document.getElementById("resultArea").innerHTML = `
-        <div class="card-box">
-          <h3>🟡 ショックインデックス</h3>
-          <p class="result">${si} → ${si_result}</p>
-        </div>
-        <div class="card-box">
-          <h3>🧠 GCS評価</h3>
-          <p class="result">${gcs} 点（E${gcsE} + V${gcsV} + M${gcsM}） → ${gcs_result}</p>
-        </div>
-        <div class="card-box">
-          <h3>🩺 NEWSスコア</h3>
-          <p class="result">${news_score} 点 → ${news_result}</p>
-        </div>
-        <div class="card-box">
-          <h3>🔴 qSOFA</h3>
-          <p class="result">${qsofa} 点 → ${qsofa_result}</p>
-        </div>
-        <div class="card-box">
-          <h3>🧮 拡張期ショックインデックス（DSI）</h3>
-          <p class="result">DSI = ${dsi} → ${dsi_result}</p>
-        </div>
-        <div class="card-box">
-          <h3>🩸 平均動脈圧（MAP）</h3>
-          <p class="result">MAP = ${map} mmHg → ${map_result}</p>
-        </div>
-        ${urine_result}
-      `;
-    });
-  </script>
-   
+    <div class="btn-wrapper"><button type="submit" class="btn-evaluate">評価する</button></div>
+  </form>
+
+  <div id="resultArea"></div>
+
+<script>
+const form=document.getElementById('vitalForm');
+const resultArea=document.getElementById('resultArea');
+const val=id=>{const v=document.getElementById(id).value.trim();return v===''?NaN:Number(v)};
+const card=(t,b)=>`<div class="card-box"><h3>${t}</h3><p class="result">${b}</p></div>`;
+
+form.addEventListener('submit',e=>{
+  e.preventDefault();
+  resultArea.innerHTML='';
+  const sbp=val('bp'),dbp=val('dap'),pulse=val('pulse'),rr=val('rr'),spo2=val('spo2'),temp=val('temp'),urine=val('urine');
+  const oxygen=document.getElementById('oxygen').value;
+  const gE=val('gcsE'),gV=val('gcsV'),gM=val('gcsM');
+  const avpu=document.getElementById('avpu').value;
+  let html='';
+
+  // SI
+  if(!isNaN(pulse)&&!isNaN(sbp)&&sbp!==0){
+    const si=(pulse/sbp).toFixed(2);
+    const m=si<0.5?'正常':si<1?'注意':'ショック疑い';
+    html+=card('🟡 SI',`SI=${si} → ${m}`);
+  }else{
+    const miss=[];if(isNaN(pulse))miss.push('脈拍');if(isNaN(sbp))miss.push('収縮期血圧');
+    html+=card('🟡 SI',`評価できません（${miss.join('・')}）`);
+  }
+
+  // PP & PPR
+  if(!isNaN(sbp)&&!isNaN(dbp)){
+    const pp=sbp-dbp;const ppr=(pp/sbp).toFixed(2);
+    const ppMsg=pp<30?'狭小':pp<=60?'正常':'広幅';
+    const pprMsg=ppr<0.25?'狭小':ppr<=0.5?'正常':'広幅';
+    html+=card('📈 脈圧',`${pp} mmHg → ${ppMsg}`);
+    html+=card('📉 脈圧比',`PPR=${ppr} → ${pprMsg}`);
+  }else{
+    const miss=[];if(isNaN(sbp))miss.push('収縮期血圧');if(isNaN(dbp))miss.push('拡張期血圧');
+    html+=card('📈 脈圧',`評価できません（${miss.join('・')}）`);
+    html+=card('📉 脈圧比',`評価できません（${miss.join('・')}）`);
+  }
+
+  // GCS
+  if(!isNaN(gE)&&!isNaN(gV)&&!isNaN(gM)){
+    const gcs=gE+gV+gM;
+    const gMsg=gcs>=15?'清明':gcs>=13?'軽度':gcs>=9?'中等度':'重度';
+    html+=card('🧠 GCS',`${gcs}点(E${gE}+V${gV}+M${gM}) → ${gMsg}`);
+  }else{
+    const miss=[];if(isNaN(gE))miss.push('GCS-E');if(isNaN(gV))miss.push('GCS-V');if(isNaN(gM))miss.push('GCS-M');
+    html+=card('🧠 GCS',`評価できません（${miss.join('・')}）`);
+  }
+
+  // NEWS (計算可能項目のみで加算)
+  let news=0; let usedNews=false;
+  if(!isNaN(rr)){usedNews=true;if(rr<=8||rr>=25)news+=3;else if(rr>=21)news+=2;else if(rr>=9&&rr<=11)news+=1;}
+  if(!isNaN(spo2)){usedNews=true;if(spo2<=91)news+=3;else if(spo2<=93)news+=2;else if(spo2<=95)news+=1;}
+  if(oxygen==='yes'){usedNews=true;news+=2;}
+  if(!isNaN(temp)){usedNews=true;if(temp<35||temp>=39.1)news+=3;else if(temp>=38.1)news+=1;}
+  if(!isNaN(sbp)){usedNews=true;if(sbp<=90)news+=3;else if(sbp<=100)news+=2;}
+  if(avpu!=='A'){usedNews=true;news+=3;}
+  if(usedNews){html+=card('🩺 NEWS',`${news} 点`);}else{html+=card('🩺 NEWS','評価できません（NEWS関連項目なし）');}
+
+  // qSOFA
+  let q=0; let usedQ=false;
+  if(!isNaN(rr)){usedQ=true;if(rr>=22)q++;}
+  if(!isNaN(gE)&&!isNaN(gV)&&!isNaN(gM)){usedQ=true;const gcs=gE+gV+gM;if(gcs<15)q++;}
+  if(!isNaN(sbp)){usedQ=true;if(sbp<=100)q++;}
+  if(usedQ){html+=card('🔴 qSOFA',`${q} 点`);}else{html+=card('🔴 qSOFA','評価できません（qSOFA関連項目なし）');}
+
+  // DSI
+  if(!isNaN(pulse)&&!isNaN(dbp)&&dbp!==0){
+    const dsi=(pulse/dbp).toFixed(2);
+    const dm=dsi>=3?'危機的':dsi>=2?'ショック疑い':dsi>=1?'軽度':'正常';
+    html+=card('🧮 DSI',`DSI=${dsi} → ${dm}`);
+  }else{
+    const miss=[];if(isNaN(pulse))miss.push('脈拍');if(isNaN(dbp))miss.push('拡張期血圧');
+    html+=card('🧮 DSI',`評価できません（${miss.join('・')}）`);
+  }
+
+  // MAP
+  if(!isNaN(sbp)&&!isNaN(dbp)){
+    const map=((sbp+2*dbp)/3).toFixed(1);
+    html+=card('🩸 MAP',`MAP=${map} mmHg`);
+  }else{
+    const miss=[];if(isNaN(sbp))miss.push('収縮期血圧');if(isNaN(dbp))miss.push('拡張期血圧');
+    html+=card('🩸 MAP',`評価できません（${miss.join('・')}）`);
+  }
+
+  // Urine
+  if(!isNaN(urine)){
+    html+=card('🚻 尿量',`${urine} ml/h → ${urine<50?'少尿':'正常'}`);
+  }
+
+  resultArea.innerHTML=html;
+});
+</script>
+
 </section>
 </body>
 </html>
