@@ -6,103 +6,137 @@
   <title>バイタル評価チェッカー</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    body{background:#f4f8fc;font-family:'Segoe UI',sans-serif}
+    /* ===== カラーテーマ変数 ===== */
+    :root{
+      --bg:#f4f8fc;
+      --card-bg:#ffffff;
+      --primary:#007acc;
+      --text:#333333;
+      --btn-green-start:#34c759;
+      --btn-green-end:#28a745;
+      --btn-blue-start:#4f9dff;
+      --btn-blue-end:#007bff;
+      --shadow-light:rgba(0,0,0,.08);
+    }
+    @media (prefers-color-scheme:dark){
+      :root{
+        --bg:#121417;
+        --card-bg:#1e1f22;
+        --primary:#62b0ff;
+        --text:#e5e7eb;
+        --shadow-light:rgba(0,0,0,.4);
+      }
+    }
+
+    /* ===== レイアウト ===== */
+    body{background:var(--bg);font-family:'Segoe UI',sans-serif;color:var(--text);margin:0}
     .vital-container{max-width:900px;margin:0 auto;padding:30px}
-    .card-box{background:#fff;border-left:8px solid #007acc;border-radius:14px;padding:24px;margin-bottom:24px;box-shadow:0 4px 15px rgba(0,0,0,.08);transition:transform .3s ease,box-shadow .3s ease}
-    .card-box:hover{transform:scale(1.01);box-shadow:0 6px 18px rgba(0,0,0,.12)}
-    .card-box h3{margin-top:0;color:#007acc;font-size:1.3em;border-bottom:1px solid #e0e0e0;padding-bottom:6px}
-    .result{font-weight:bold;font-size:1.15em;color:#333;padding-top:5px;white-space:pre-wrap}
+    .card-box{background:var(--card-bg);border-left:8px solid var(--primary);border-radius:14px;padding:24px;margin-bottom:24px;box-shadow:0 4px 15px var(--shadow-light);transition:transform .3s ease,box-shadow .3s ease}
+    .card-box:hover{transform:scale(1.01);box-shadow:0 6px 18px var(--shadow-light)}
+    .card-box h3{margin-top:0;color:var(--primary);font-size:1.3em;border-bottom:1px solid rgba(224,224,224,.3);padding-bottom:6px}
+    .result{font-weight:bold;font-size:1.15em;white-space:pre-wrap}
+
+    /* ===== フォーム ===== */
     .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2em}
     .form-grid label{display:block;font-weight:bold;margin-bottom:4px}
     .form-grid input,.form-grid select{width:100%;padding:.6em;border:1px solid #ccc;border-radius:6px;background:#fdfdfd;box-shadow:inset 0 1px 2px rgba(0,0,0,.05)}
-    .btn{position:relative;display:inline-block;padding:14px 40px;font-size:1.05em;font-weight:bold;color:#fff;border:none;border-radius:50px;cursor:pointer;overflow:hidden;transition:transform .2s ease,box-shadow .2s ease}
-    .btn::after{content:"";position:absolute;top:0;left:-100%;width:100%;height:100%;background:rgba(255,255,255,.25);transform:skewX(-20deg);transition:left .45s ease}
+
+    /* スマホ: 縦一列 */
+    @media(max-width:600px){.form-grid{grid-template-columns:1fr}}
+
+    /* ===== ボタン ===== */
+    .btn{position:relative;display:inline-block;padding:14px 40px;font-size:1.05em;font-weight:bold;color:#fff;border:none;border-radius:50px;cursor:pointer;overflow:hidden;transition:transform .2s,box-shadow .2s}
+    .btn::after{content:"";position:absolute;top:0;left:-100%;width:100%;height:100%;background:rgba(255,255,255,.25);transform:skewX(-20deg);transition:left .45s}
     .btn:hover{transform:scale(1.05)}
     .btn:hover::after{left:100%}
-    .btn-evaluate{background:linear-gradient(135deg,#34c759 0%,#28a745 100%);box-shadow:0 8px 20px rgba(40,167,69,.35)}
-    .btn-copy{background:linear-gradient(135deg,#4f9dff 0%,#007bff 100%);box-shadow:0 8px 20px rgba(0,123,255,.35)}
+    .btn-evaluate{background:linear-gradient(135deg,var(--btn-green-start) 0%,var(--btn-green-end) 100%);box-shadow:0 8px 20px rgba(40,167,69,.35)}
+    .btn-copy{background:linear-gradient(135deg,var(--btn-blue-start) 0%,var(--btn-blue-end) 100%);box-shadow:0 8px 20px rgba(0,123,255,.35)}
     .btn-wrapper{display:flex;justify-content:center;gap:20px;margin-top:32px;flex-wrap:wrap}
     .hidden{display:none}
   </style>
 </head>
 <body>
 <section class="vital-container">
+  <!-- 解説カード -->
   <div class="card-box">
     <h3>📘 評価結果の解説</h3>
     <ul>
-      <li><strong>ショックインデックス（SI）</strong>＝脈拍 / 収縮期血圧</li>
-      <li><strong>脈圧（PP）</strong>＝収縮期血圧 − 拡張期血圧</li>
-      <li><strong>脈圧比（PPR）</strong>＝PP / 収縮期血圧</li>
-      <li><strong>GCS</strong>＝E+V+M（選択式）</li>
-      <li><strong>JCS</strong>＝日本式意識レベル（選択式）</li>
-      <li><strong>NEWS</strong>＝早期警戒スコア</li>
-      <li><strong>qSOFA</strong>＝敗血症スクリーニング</li>
+      <li><strong>SI</strong> = 脈拍 / 収縮期血圧</li>
+      <li><strong>PP</strong> = 収縮期血圧 − 拡張期血圧</li>
+      <li><strong>PPR</strong> = PP / 収縮期血圧</li>
+      <li><strong>GCS</strong> = E+V+M（ドロップダウン）</li>
+      <li><strong>JCS</strong> = 日本式意識レベル</li>
+      <li><strong>NEWS</strong> = 早期警戒スコア</li>
+      <li><strong>qSOFA</strong> = 敗血症スクリーニング</li>
     </ul>
   </div>
 
   <h1>バイタル評価チェッカー</h1>
   <form id="vitalForm">
     <div class="form-grid">
-      <div><label>尿量（ml/h）</label><input type="number" id="urine" min="0"></div>
-      <div><label>体温（℃）</label><input type="number" step="0.1" id="temp"></div>
+      <div><label>尿量（ml/h）</label><input type="number" id="urine"></div>
+      <div><label>体温（℃）</label><input type="number" id="temp" step="0.1"></div>
       <div><label>脈拍数（回/分）</label><input type="number" id="pulse"></div>
       <div><label>呼吸数（回/分）</label><input type="number" id="rr"></div>
       <div><label>拡張期血圧（mmHg）</label><input type="number" id="dap"></div>
       <div><label>収縮期血圧（mmHg）</label><input type="number" id="bp"></div>
       <div><label>SpO₂（%）</label><input type="number" id="spo2"></div>
       <div><label>酸素投与あり？</label><select id="oxygen"><option value="no">なし</option><option value="yes">あり</option></select></div>
-      <!-- 意識レベル選択 -->
+      <!-- 意識レベル -->
       <div><label>JCS</label>
-        <select id="jcs"><option value="">- 選択 -</option><option value="0">0: 覚醒</option><option value="1">1: 刺激なくても覚醒するが分離</option><option value="2">2: 呼名で開眼</option><option value="3">3: 痛み刺激で開眼</option><option value="10">10: 覚醒しているが見当識障害</option><option value="20">20: 呼びかけで開眼・見当識障害</option><option value="30">30: 痛み刺激で開眼・見当識障害</option><option value="100">100: 痛み刺激でわずかに動く</option><option value="200">200: 痛み刺激で反射的動き</option><option value="300">300: 反応なし</option></select>
+        <select id="jcs">
+          <option value="">- 選択 -</option><option value="0">0: 覚醒</option><option value="1">1: 刺激なくても覚醒</option><option value="2">2: 呼名で開眼</option><option value="3">3: 痛み刺激で開眼</option><option value="10">10: 覚醒・見当識障害</option><option value="20">20: 呼名・見当識障害</option><option value="30">30: 痛み・見当識障害</option><option value="100">100: 痛み刺激でわずか動く</option><option value="200">200: 痛み刺激で反射</option><option value="300">300: 無反応</option>
+        </select>
       </div>
       <div><label>GCS - 開眼 (E)</label>
-        <select id="gcsE"><option value="">-</option><option value="4">E4: 自発</option><option value="3">E3: 呼びかけ</option><option value="2">E2: 痛み刺激</option><option value="1">E1: なし</option></select>
+        <select id="gcsE"><option value="">-</option><option value="4">4: 自発</option><option value="3">3: 呼びかけ</option><option value="2">2: 痛み刺激</option><option value="1">1: なし</option></select>
       </div>
       <div><label>GCS - 言語 (V)</label>
-        <select id="gcsV"><option value="">-</option><option value="5">V5: 見当識あり</option><option value="4">V4: 混乱</option><option value="3">V3: 不適当</option><option value="2">V2: 理解不能</option><option value="1">V1: なし</option></select>
+        <select id="gcsV"><option value="">-</option><option value="5">5: 見当識あり</option><option value="4">4: 混乱</option><option value="3">3: 不適当</option><option value="2">2: 理解不能</option><option value="1">1: なし</option></select>
       </div>
       <div><label>GCS - 運動 (M)</label>
-        <select id="gcsM"><option value="">-</option><option value="6">M6: 命令に従う</option><option value="5">M5: 痛部定位</option><option value="4">M4: 逃避</option><option value="3">M3: 屈曲</option><option value="2">M2: 伸展</option><option value="1">M1: なし</option></select>
+        <select id="gcsM"><option value="">-</option><option value="6">6: 命令従う</option><option value="5">5: 痛部定位</option><option value="4">4: 逃避</option><option value="3">3: 屈曲</option><option value="2">2: 伸展</option><option value="1">1: なし</option></select>
       </div>
       <div><label>AVPU</label><select id="avpu"><option value="A">A</option><option value="V">V</option><option value="P">P</option><option value="U">U</option></select></div>
     </div>
     <div class="btn-wrapper">
       <button type="submit" class="btn btn-evaluate">評価する</button>
-      <button id="copyBtn" type="button" class="btn btn-copy hidden">結果をコピー</button>
+      <button type="button" id="copyBtn" class="btn btn-copy hidden">結果をコピー</button>
     </div>
   </form>
 
   <div id="resultArea"></div>
+</section>
 
 <script>
-const form=document.getElementById('vitalForm');
 const resultArea=document.getElementById('resultArea');
 const copyBtn=document.getElementById('copyBtn');
-const numOrNaN=v=>v===''?NaN:Number(v);
-const val=id=>numOrNaN(document.getElementById(id).value);
+const form=document.getElementById('vitalForm');
+const toNum=v=>v===''?NaN:Number(v);
+const g=id=>document.getElementById(id);
+
 const card=(t,b)=>`<div class="card-box"><h3>${t}</h3><p class="result">${b}</p></div>`;
 
-// コピー機能
-async function copyResults(){
-  const text=resultArea.innerText.trim();
-  if(!text){alert('コピーする内容がありません');return;}
-  try{await navigator.clipboard.writeText(text);}catch{const ta=document.createElement('textarea');ta.value=text;ta.style.opacity='0';document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);} 
-  copyBtn.innerText='✔ コピーしました!';setTimeout(()=>copyBtn.innerText='結果をコピー',2000);
+function copyResults(){
+  const txt=resultArea.innerText.trim();
+  if(!txt){alert('コピーする内容がありません');return;}
+  navigator.clipboard?.writeText(txt).then(()=>{})
+  .catch(()=>{
+    const ta=document.createElement('textarea');ta.value=txt;ta.style.opacity='0';document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);
+  });
+  copyBtn.textContent='✔ コピーしました!';setTimeout(()=>copyBtn.textContent='結果をコピー',2000);
 }
 copyBtn.addEventListener('click',copyResults);
 
 form.addEventListener('submit',e=>{
   e.preventDefault();
   copyBtn.classList.add('hidden');
-  // 取得
-  const sbp=val('bp'), dbp=val('dap'), pulse=val('pulse'), rr=val('rr'), spo2=val('spo2'), temp=val('temp'), urine=val('urine');
-  const oxygen=document.getElementById('oxygen').value;
-  const gE=val('gcsE'), gV=val('gcsV'), gM=val('gcsM');
-  const jcs=val('jcs');
-  const avpu=document.getElementById('avpu').value;
-
-  let html='';
-  const add=(t,m)=>html+=card(t,m);
+  const sbp=toNum(g('bp').value), dbp=toNum(g('dap').value), pulse=toNum(g('pulse').value), rr=toNum(g('rr').value), spo2=toNum(g('spo2').value), temp=toNum(g('temp').value), urine=toNum(g('urine').value);
+  const oxygen=g('oxygen').value;
+  const gE=toNum(g('gcsE').value), gV=toNum(g('gcsV').value), gM=toNum(g('gcsM').value);
+  const jcs=toNum(g('jcs').value);
+  const avpu=g('avpu').value;
+  let html=''; const add=(t,m)=>html+=card(t,m);
   const miss=l=>`評価できません（${l.join('・')}）`;
 
   // JCS & GCS
@@ -119,7 +153,7 @@ form.addEventListener('submit',e=>{
 
   // PP & PPR
   if(!isNaN(sbp)&&!isNaN(dbp)){
-    const pp=sbp-dbp;const ppr=(pp/sbp).toFixed(2);
+    const pp=sbp-dbp, ppr=(pp/sbp).toFixed(2);
     add('📈 脈圧',`${pp} mmHg → ${pp<30?'狭小':pp<=60?'正常':'広幅'}`);
     add('📉 PPR',`PPR=${ppr} → ${ppr<0.25?'狭小':ppr<=0.5?'正常':'広幅'}`);
   }else{
@@ -137,11 +171,11 @@ form.addEventListener('submit',e=>{
   add('🩺 NEWS',used?`${news} 点`:'評価できません（NEWS関連項目なし）');
 
   // qSOFA
-  let q=0, u=false;
-  if(!isNaN(rr)){u=true;if(rr>=22)q++;}
-  if(!isNaN(gE)&&!isNaN(gV)&&!isNaN(gM)){u=true;if(gE+gV+gM<15)q++;}
-  if(!isNaN(sbp)){u=true;if(sbp<=100)q++;}
-  add('🔴 qSOFA',u?`${q} 点`:'評価できません（qSOFA関連項目なし）');
+  let q=0, uq=false;
+  if(!isNaN(rr)){uq=true;if(rr>=22)q++;}
+  if(!isNaN(gE)&&!isNaN(gV)&&!isNaN(gM)){uq=true;if(gE+gV+gM<15)q++;}
+  if(!isNaN(sbp)){uq=true;if(sbp<=100)q++;}
+  add('🔴 qSOFA',uq?`${q} 点`:'評価できません（qSOFA関連項目なし）');
 
   // DSI
   if(!isNaN(pulse)&&!isNaN(dbp)&&dbp!==0){const dsi=(pulse/dbp).toFixed(2);add('🧮 DSI',`DSI=${dsi} → ${dsi>=3?'危機的':dsi>=2?'ショック疑い':dsi>=1?'軽度':'正常'}`);}else{const m=[];if(isNaN(pulse))m.push('脈拍');if(isNaN(dbp))m.push('拡張期血圧');add('🧮 DSI',miss(m));}
@@ -155,3 +189,6 @@ form.addEventListener('submit',e=>{
   resultArea.innerHTML=html;
   if(html){copyBtn.classList.remove('hidden');}
 });
+</script>
+</body>
+</html>
