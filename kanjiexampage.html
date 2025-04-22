@@ -4,13 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>看護学校 国語対策｜まずは漢字から確実に得点する！</title>
+
   <!-- メタタグ -->
   <meta name="description" content="看護学校入試の国語対策サイト。漢字・敬語・謙譲語を効率的に学び、確実に得点力を伸ばす勉強法を解説します。">
   <meta name="keywords" content="看護学校, 国語対策, 漢字, 敬語, 謙譲語, 過去問, 入試勉強">
+
+  <!-- OGP用 -->
   <meta property="og:title" content="看護学校 国語対策｜まずは漢字から確実に得点する！">
   <meta property="og:description" content="漢字や敬語の効率的勉強法をマスターし、国語で高得点を狙おう。過去問解説や学習スケジュールもご紹介。">
+  <meta property="og:image" content="images/OGP/ogp-kanji.png">
+  <meta property="og:url" content="https://あなたのドメイン/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter（X）カード -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="看護学校 国語対策｜まずは漢字から確実に得点する！">
+  <meta name="twitter:description" content="漢字や敬語の効率的勉強法をマスターし、国語で高得点を狙おう。過去問解説や学習スケジュールもご紹介。">
+  <meta name="twitter:image" content="images/OGP/ogp-kanji.png">
+
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;500;700&display=swap" rel="stylesheet">
+
   <style>
     /* 全体リセット＆ベース */
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -26,7 +40,7 @@
     .hero-section p { font-size: 1.2em; letter-spacing: 0.05em; }
 
     /* 学習目的 */
-    .learning-purpose-section { background: #ffffff; padding: 40px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transform: translateY(-50px); margin-bottom: -50px; }
+    .learning-purpose-section { background: #fff; padding: 40px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transform: translateY(-50px); margin-bottom: -50px; }
     .learning-purpose-section h2 { color: #0066cc; font-size: 1.8em; margin-bottom: 20px; }
     .learning-purpose-section p { margin-bottom: 15px; }
 
@@ -36,7 +50,7 @@
     .challenge-section p { color: #444; font-size: 1.1em; }
 
     /* 問題 */
-    .exam-section { background: #ffffff; padding: 40px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin: 60px auto; transition: transform 0.3s; }
+    .exam-section { background: #fff; padding: 40px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin: 60px auto; transition: transform 0.3s; }
     .exam-section:hover { transform: translateY(-5px); }
     .exam-section h2 { color: #0066cc; margin-bottom: 30px; font-size: 1.8em; }
     .exam-section ol { list-style: decimal inside; }
@@ -48,8 +62,7 @@
 
     /* 会話 */
     .faq-section { margin: 60px auto; max-width: 800px; }
-    .faq-section .balloon-box { margin-bottom: 20px; }
-    .balloon-left, .balloon-right { display: flex; align-items: flex-start; }
+    .balloon-left, .balloon-right { display: flex; align-items: flex-start; margin-bottom: 20px; }
     .balloon-right { flex-direction: row-reverse; }
     .balloon-left img, .balloon-right img { width: 60px; height: 60px; border-radius: 50%; border: 2px solid #0066cc; }
     .balloon-left p { background: #fff; border-radius: 15px; padding: 15px; box-shadow: 0 3px 6px rgba(0,0,0,0.05); margin-left: 15px; position: relative; }
@@ -58,7 +71,7 @@
     .balloon-right p::before { content: ''; position: absolute; right: -20px; top: 15px; border: 10px solid transparent; border-left-color: #0066cc; }
 
     /* FAQ */
-    #faq { background: #ffffff; padding: 40px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin: 60px auto; max-width: 800px; }
+    #faq { background: #fff; padding: 40px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin: 60px auto; max-width: 800px; }
     #faq h2 { color: #0066cc; font-size: 1.8em; margin-bottom: 20px; }
     #faq dl dt { font-weight: 500; margin-top: 20px; }
     #faq dl dd { margin: 10px 0 0 20px; }
@@ -66,7 +79,7 @@
     /* 相談 */
     .contact-choice-section { margin: 60px auto; max-width: 800px; text-align: center; }
     .talk-bubble { background: #fff; display: inline-block; padding: 20px 30px; border-radius: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin-bottom: 30px; }
-    .contact-buttons a { display: inline-block; margin: 0 15px; padding: 12px 24px; border-radius: 8px; font-weight: 500; box-shadow: 0 3px 6px rgba(0,0,0,0.1); transition: transform 0.3s; }
+    .contact-buttons a { display: inline-block; margin: 0 15px; padding: 12px 24px; border-radius: 8px; font-weight: 500; box-shadow: 0 3px 6px rgba(0,0,0,0.1); transition: transform 0.3s; } 
     .contact-buttons a:hover { transform: translateY(-3px); }
     .btn-line { background: #00c300; color: #fff; }
     .btn-consultation { background: #007bff; color: #fff; }
@@ -75,7 +88,10 @@
     footer { text-align: center; padding: 20px 0; color: #666; }
   </style>
   <script>
-    function showAnswer(id) { var el = document.getElementById(id); el.style.display = el.style.display === 'block' ? 'none' : 'block'; }
+    function showAnswer(id) {
+      const el = document.getElementById(id);
+      el.style.display = el.style.display === 'block' ? 'none' : 'block';
+    }
   </script>
 </head>
 <body>
@@ -169,11 +185,11 @@
         <p><strong>講師：</strong>「現代文は、ある程度の点数は取れても、そこから伸ばすのが難しい教科なんですよ。」</p>
       </div>
       <div class="balloon-box balloon-left">
-        <img src="images/student/student-thinking.png" alt="学生の考え中">
+        <img src="images/student/student-question.jpg" alt="学生の考え中">
         <p><strong>生徒：</strong>「確かに、最初の模試でも国語はまあまあでしたが、もっと点数を伸ばしたいです。」</p>
       </div>
       <div class="balloon-box balloon-right">
-        <img src="images/teacher/teacher-serious.png" alt="講師のアドバイス">
+        <img src="images/teacher/teacher-serious.jpg" alt="講師のアドバイス">
         <p><strong>講師：</strong>「それなら、まず漢字や敬語を重点的に勉強しましょう。ここは答えが一つに定まるから、確実に得点できますよ。」</p>
       </div>
       <div class="balloon-box balloon-left">
