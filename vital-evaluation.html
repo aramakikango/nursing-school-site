@@ -6,66 +6,58 @@
   <title>バイタル評価チェッカー</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* ===== カラーテーマ変数 ===== */
+    /* ========= テーマ変数 ========= */
     :root{
-      --bg:#f4f8fc;
-      --card-bg:#ffffff;
-      --primary:#007acc;
-      --text:#333333;
-      --btn-green-start:#34c759;
-      --btn-green-end:#28a745;
-      --btn-blue-start:#4f9dff;
-      --btn-blue-end:#007bff;
-      --shadow-light:rgba(0,0,0,.08);
+      --bg:#f4f8fc; --card:#ffffff; --primary:#007acc; --text:#333; --shadow:rgba(0,0,0,.08);
+      --green-start:#34c759; --green-end:#28a745; --blue-start:#4f9dff; --blue-end:#007bff;
     }
-    @media (prefers-color-scheme:dark){
-      :root{
-        --bg:#121417;
-        --card-bg:#1e1f22;
-        --primary:#62b0ff;
-        --text:#e5e7eb;
-        --shadow-light:rgba(0,0,0,.4);
-      }
+    html.dark{
+      --bg:#121417; --card:#1e1f22; --primary:#62b0ff; --text:#e5e7eb; --shadow:rgba(0,0,0,.4);
     }
 
-    /* ===== レイアウト ===== */
-    body{background:var(--bg);font-family:'Segoe UI',sans-serif;color:var(--text);margin:0}
-    .vital-container{max-width:900px;margin:0 auto;padding:30px}
-    .card-box{background:var(--card-bg);border-left:8px solid var(--primary);border-radius:14px;padding:24px;margin-bottom:24px;box-shadow:0 4px 15px var(--shadow-light);transition:transform .3s ease,box-shadow .3s ease}
-    .card-box:hover{transform:scale(1.01);box-shadow:0 6px 18px var(--shadow-light)}
-    .card-box h3{margin-top:0;color:var(--primary);font-size:1.3em;border-bottom:1px solid rgba(224,224,224,.3);padding-bottom:6px}
-    .result{font-weight:bold;font-size:1.15em;white-space:pre-wrap}
+    /* ========= ベース ========= */
+    body{margin:0;font-family:"Segoe UI",sans-serif;background:var(--bg);color:var(--text)}
+    .vital-container{max-width:900px;margin:auto;padding:30px;position:relative}
+    .card-box{background:var(--card);border-left:8px solid var(--primary);border-radius:14px;padding:24px;margin-bottom:24px;box-shadow:0 4px 15px var(--shadow);transition:transform .3s,box-shadow .3s}
+    .card-box:hover{transform:scale(1.01);box-shadow:0 6px 18px var(--shadow)}
+    .card-box h3{margin:0 0 6px;color:var(--primary);font-size:1.25em;border-bottom:1px solid rgba(224,224,224,.3)}
+    .result{font-weight:bold;font-size:1.1em;white-space:pre-wrap}
 
-    /* ===== フォーム ===== */
+    /* ========= フォーム ========= */
     .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2em}
-    .form-grid label{display:block;font-weight:bold;margin-bottom:4px}
-    .form-grid input,.form-grid select{width:100%;padding:.6em;border:1px solid #ccc;border-radius:6px;background:#fdfdfd;box-shadow:inset 0 1px 2px rgba(0,0,0,.05)}
-
-    /* スマホ: 縦一列 */
+    .form-grid label{font-weight:bold;margin-bottom:4px;display:block}
+    .form-grid input,.form-grid select{width:100%;padding:.6em;border:1px solid #ccc;border-radius:6px;background:#fdfdfd}
     @media(max-width:600px){.form-grid{grid-template-columns:1fr}}
 
-    /* ===== ボタン ===== */
+    /* ========= ボタン ========= */
     .btn{position:relative;display:inline-block;padding:14px 40px;font-size:1.05em;font-weight:bold;color:#fff;border:none;border-radius:50px;cursor:pointer;overflow:hidden;transition:transform .2s,box-shadow .2s}
     .btn::after{content:"";position:absolute;top:0;left:-100%;width:100%;height:100%;background:rgba(255,255,255,.25);transform:skewX(-20deg);transition:left .45s}
-    .btn:hover{transform:scale(1.05)}
-    .btn:hover::after{left:100%}
-    .btn-evaluate{background:linear-gradient(135deg,var(--btn-green-start) 0%,var(--btn-green-end) 100%);box-shadow:0 8px 20px rgba(40,167,69,.35)}
-    .btn-copy{background:linear-gradient(135deg,var(--btn-blue-start) 0%,var(--btn-blue-end) 100%);box-shadow:0 8px 20px rgba(0,123,255,.35)}
+    .btn:hover{transform:scale(1.05)} .btn:hover::after{left:100%}
+    .btn-eval{background:linear-gradient(135deg,var(--green-start),var(--green-end));box-shadow:0 8px 20px rgba(40,167,69,.35)}
+    .btn-copy{background:linear-gradient(135deg,var(--blue-start),var(--blue-end));box-shadow:0 8px 20px rgba(0,123,255,.35)}
     .btn-wrapper{display:flex;justify-content:center;gap:20px;margin-top:32px;flex-wrap:wrap}
     .hidden{display:none}
+
+    /* ========= テーマトグル ========= */
+    .theme-toggle{position:absolute;top:18px;right:18px}
+    .theme-btn{background:transparent;border:none;font-size:1.6rem;cursor:pointer;color:var(--primary);transition:transform .2s}
+    .theme-btn:hover{transform:rotate(20deg)}
   </style>
 </head>
 <body>
 <section class="vital-container">
+  <!-- ダークモード切替ボタン -->
+  <div class="theme-toggle"><button id="themeBtn" class="theme-btn" title="Toggle dark mode">🌙</button></div>
+
   <!-- 解説カード -->
   <div class="card-box">
     <h3>📘 評価結果の解説</h3>
     <ul>
-      <li><strong>SI</strong> = 脈拍 / 収縮期血圧</li>
-      <li><strong>PP</strong> = 収縮期血圧 − 拡張期血圧</li>
-      <li><strong>PPR</strong> = PP / 収縮期血圧</li>
-      <li><strong>GCS</strong> = E+V+M（ドロップダウン）</li>
-      <li><strong>JCS</strong> = 日本式意識レベル</li>
+      <li><strong>SI</strong> = 脈拍 / SBP</li>
+      <li><strong>PP</strong> = SBP − DBP</li>
+      <li><strong>PPR</strong> = PP / SBP</li>
+      <li><strong>GCS</strong> = E+V+M</li>
+      <li><strong>JCS</strong> = 意識レベル (日本)</li>
       <li><strong>NEWS</strong> = 早期警戒スコア</li>
       <li><strong>qSOFA</strong> = 敗血症スクリーニング</li>
     </ul>
@@ -83,25 +75,15 @@
       <div><label>SpO₂（%）</label><input type="number" id="spo2"></div>
       <div><label>酸素投与あり？</label><select id="oxygen"><option value="no">なし</option><option value="yes">あり</option></select></div>
       <!-- 意識レベル -->
-      <div><label>JCS</label>
-        <select id="jcs">
-          <option value="">- 選択 -</option><option value="0">0: 覚醒</option><option value="1">1: 刺激なくても覚醒</option><option value="2">2: 呼名で開眼</option><option value="3">3: 痛み刺激で開眼</option><option value="10">10: 覚醒・見当識障害</option><option value="20">20: 呼名・見当識障害</option><option value="30">30: 痛み・見当識障害</option><option value="100">100: 痛み刺激でわずか動く</option><option value="200">200: 痛み刺激で反射</option><option value="300">300: 無反応</option>
-        </select>
-      </div>
-      <div><label>GCS - 開眼 (E)</label>
-        <select id="gcsE"><option value="">-</option><option value="4">4: 自発</option><option value="3">3: 呼びかけ</option><option value="2">2: 痛み刺激</option><option value="1">1: なし</option></select>
-      </div>
-      <div><label>GCS - 言語 (V)</label>
-        <select id="gcsV"><option value="">-</option><option value="5">5: 見当識あり</option><option value="4">4: 混乱</option><option value="3">3: 不適当</option><option value="2">2: 理解不能</option><option value="1">1: なし</option></select>
-      </div>
-      <div><label>GCS - 運動 (M)</label>
-        <select id="gcsM"><option value="">-</option><option value="6">6: 命令従う</option><option value="5">5: 痛部定位</option><option value="4">4: 逃避</option><option value="3">3: 屈曲</option><option value="2">2: 伸展</option><option value="1">1: なし</option></select>
-      </div>
-      <div><label>AVPU</label><select id="avpu"><option value="A">A</option><option value="V">V</option><option value="P">P</option><option value="U">U</option></select></div>
+      <div><label>JCS</label><select id="jcs"><option value="">-</option><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="10">10</option><option value="20">20</option><option value="30">30</option><option value="100">100</option><option value="200">200</option><option value="300">300</option></select></div>
+      <div><label>GCS - E</label><select id="gcsE"><option value="">-</option><option>4</option><option>3</option><option>2</option><option>1</option></select></div>
+      <div><label>GCS - V</label><select id="gcsV"><option value="">-</option><option>5</option><option>4</option><option>3</option><option>2</option><option>1</option></select></div>
+      <div><label>GCS - M</label><select id="gcsM"><option value="">-</option><option>6</option><option>5</option><option>4</option><option>3</option><option>2</option><option>1</option></select></div>
+      <div><label>AVPU</label><select id="avpu"><option>A</option><option>V</option><option>P</option><option>U</option></select></div>
     </div>
     <div class="btn-wrapper">
-      <button type="submit" class="btn btn-evaluate">評価する</button>
-      <button type="button" id="copyBtn" class="btn btn-copy hidden">結果をコピー</button>
+      <button class="btn btn-eval" type="submit">評価する</button>
+      <button class="btn btn-copy hidden" id="copyBtn" type="button">結果をコピー</button>
     </div>
   </form>
 
@@ -109,66 +91,67 @@
 </section>
 
 <script>
-const resultArea=document.getElementById('resultArea');
-const copyBtn=document.getElementById('copyBtn');
-const form=document.getElementById('vitalForm');
-const toNum=v=>v===''?NaN:Number(v);
-const g=id=>document.getElementById(id);
+/* ===== テーマ切替 ===== */
+document.addEventListener('DOMContentLoaded',()=>{
+  const root=document.documentElement;
+  const themeBtn=document.getElementById('themeBtn');
+  if(!themeBtn)return; // ボタンが見つからない場合はスキップ
 
-const card=(t,b)=>`<div class="card-box"><h3>${t}</h3><p class="result">${b}</p></div>`;
+  const apply=(mode)=>{
+    if(mode==='dark'){
+      root.classList.add('dark');
+      themeBtn.textContent='☀';
+    }else{
+      root.classList.remove('dark');
+      themeBtn.textContent='🌙';
+    }
+    try{localStorage.setItem('theme',mode);}catch(e){}
+  };
 
-function copyResults(){
-  const txt=resultArea.innerText.trim();
-  if(!txt){alert('コピーする内容がありません');return;}
-  navigator.clipboard?.writeText(txt).then(()=>{})
-  .catch(()=>{
-    const ta=document.createElement('textarea');ta.value=txt;ta.style.opacity='0';document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);
+  // 初期状態
+  let stored='';
+  try{stored=localStorage.getItem('theme');}catch(e){}
+  apply(stored==='dark'?'dark':'light');
+
+  // クリックで切替
+  themeBtn.addEventListener('click',()=>{
+    const now=root.classList.contains('dark')?'dark':'light';
+    apply(now==='dark'?'light':'dark');
   });
-  copyBtn.textContent='✔ コピーしました!';setTimeout(()=>copyBtn.textContent='結果をコピー',2000);
-}
-copyBtn.addEventListener('click',copyResults);
+});
 
-form.addEventListener('submit',e=>{
-  e.preventDefault();
-  copyBtn.classList.add('hidden');
-  const sbp=toNum(g('bp').value), dbp=toNum(g('dap').value), pulse=toNum(g('pulse').value), rr=toNum(g('rr').value), spo2=toNum(g('spo2').value), temp=toNum(g('temp').value), urine=toNum(g('urine').value);
-  const oxygen=g('oxygen').value;
-  const gE=toNum(g('gcsE').value), gV=toNum(g('gcsV').value), gM=toNum(g('gcsM').value);
-  const jcs=toNum(g('jcs').value);
-  const avpu=g('avpu').value;
-  let html=''; const add=(t,m)=>html+=card(t,m);
+/* ===== 評価ロジック ===== */
+const g=id=>document.getElementById(id), val=i=>{const v=g(i).value.trim();return v===''?NaN:Number(v)};
+const card=(t,b)=>`<div class="card-box"><h3>${t}</h3><p class="result">${b}</p></div>`;
+const resultArea=document.getElementById('resultArea'), copyBtn=document.getElementById('copyBtn');
+copyBtn.onclick=()=>{if(!resultArea.innerText.trim())return;navigator.clipboard.writeText(resultArea.innerText.trim()).then(()=>{copyBtn.textContent='✔';setTimeout(()=>copyBtn.textContent='結果をコピー',1500);});};
+
+g('vitalForm').addEventListener('submit',e=>{
+  e.preventDefault();copyBtn.classList.add('hidden');
+  const sbp=val('bp'), dbp=val('dap'), pulse=val('pulse'), rr=val('rr'), spo2=val('spo2'), temp=val('temp'), urine=val('urine');
+  const o2=g('oxygen').value, gE=val('gcsE'), gV=val('gcsV'), gM=val('gcsM'), jcs=val('jcs'), avpu=g('avpu').value;
+  let html='';const add=(t,m)=>html+=card(t,m);
   const miss=l=>`評価できません（${l.join('・')}）`;
 
-  // JCS & GCS
+  // JCS / GCS
   add('🧠 JCS',!isNaN(jcs)?`JCS=${jcs}`:'未入力');
-  if(!isNaN(gE)&&!isNaN(gV)&&!isNaN(gM)){
-    const gcs=gE+gV+gM;
-    add('🧠 GCS',`${gcs}点 (E${gE}/V${gV}/M${gM})`);
-  }else{
-    const m=[];if(isNaN(gE))m.push('E');if(isNaN(gV))m.push('V');if(isNaN(gM))m.push('M');add('🧠 GCS',miss(m));
-  }
+  if(!isNaN(gE)&&!isNaN(gV)&&!isNaN(gM)){const gcs=gE+gV+gM;add('🧠 GCS',`${gcs}点 (E${gE}/V${gV}/M${gM})`);}else{add('🧠 GCS',miss(['E','V','M'].filter((x,i)=>[gE,gV,gM][i].toString()==='NaN')));} 
 
   // SI
-  if(!isNaN(pulse)&&!isNaN(sbp)&&sbp!==0){const si=(pulse/sbp).toFixed(2);add('🟡 SI',`SI=${si} → ${si<0.5?'正常':si<1?'注意':'ショック疑い'}`);}else{const m=[];if(isNaN(pulse))m.push('脈拍');if(isNaN(sbp))m.push('収縮期血圧');add('🟡 SI',miss(m));}
+  if(!isNaN(pulse)&&!isNaN(sbp)&&sbp){const si=(pulse/sbp).toFixed(2);add('🟡 SI',`SI=${si} → ${si<0.5?'正常':si<1?'注意':'ショック疑い'}`);}else{add('🟡 SI',miss(['脈拍','収縮期血圧'].filter((_,i)=>[pulse,sbp][i].toString()==='NaN')));} 
 
   // PP & PPR
-  if(!isNaN(sbp)&&!isNaN(dbp)){
-    const pp=sbp-dbp, ppr=(pp/sbp).toFixed(2);
-    add('📈 脈圧',`${pp} mmHg → ${pp<30?'狭小':pp<=60?'正常':'広幅'}`);
-    add('📉 PPR',`PPR=${ppr} → ${ppr<0.25?'狭小':ppr<=0.5?'正常':'広幅'}`);
-  }else{
-    const m=[];if(isNaN(sbp))m.push('収縮期血圧');if(isNaN(dbp))m.push('拡張期血圧');add('📈 脈圧',miss(m));add('📉 PPR',miss(m));
-  }
+  if(!isNaN(sbp)&&!isNaN(dbp)){const pp=sbp-dbp,ppr=(pp/sbp).toFixed(2);add('📈 脈圧',`${pp} mmHg → ${pp<30?'狭小':pp<=60?'正常':'広幅'}`);add('📉 PPR',`PPR=${ppr} → ${ppr<0.25?'狭小':ppr<=0.5?'正常':'広幅'}`);}else{add('📈 脈圧',miss(['SBP','DBP'].filter((_,i)=>[sbp,dbp][i].toString()==='NaN')));add('📉 PPR',miss(['SBP','DBP'].filter((_,i)=>[sbp,dbp][i].toString()==='NaN')));} 
 
   // NEWS
-  let news=0, used=false;
-  if(!isNaN(rr)){used=true;news+=(rr<=8||rr>=25)?3:(rr>=21)?2:(rr>=9&&rr<=11)?1:0;}
-  if(!isNaN(spo2)){used=true;news+=(spo2<=91)?3:(spo2<=93)?2:(spo2<=95)?1:0;}
-  if(oxygen==='yes'){used=true;news+=2;}
-  if(!isNaN(temp)){used=true;news+=(temp<35||temp>=39.1)?3:(temp>=38.1)?1:0;}
-  if(!isNaN(sbp)){used=true;news+=(sbp<=90)?3:(sbp<=100)?2:0;}
-  if(avpu!=='A'){used=true;news+=3;}
-  add('🩺 NEWS',used?`${news} 点`:'評価できません（NEWS関連項目なし）');
+  let news=0, u=false;
+  if(!isNaN(rr)){u=true;news+=(rr<=8||rr>=25)?3:(rr>=21)?2:(rr>=9&&rr<=11)?1:0;}
+  if(!isNaN(spo2)){u=true;news+=(spo2<=91)?3:(spo2<=93)?2:(spo2<=95)?1:0;}
+  if(o2==='yes'){u=true;news+=2;}
+  if(!isNaN(temp)){u=true;news+=(temp<35||temp>=39.1)?3:(temp>=38.1)?1:0;}
+  if(!isNaN(sbp)){u=true;news+=(sbp<=90)?3:(sbp<=100)?2:0;}
+  if(avpu!=='A'){u=true;news+=3;}
+  add('🩺 NEWS',u?`${news} 点`:'評価できません（NEWS関連項目なし）');
 
   // qSOFA
   let q=0, uq=false;
@@ -178,16 +161,16 @@ form.addEventListener('submit',e=>{
   add('🔴 qSOFA',uq?`${q} 点`:'評価できません（qSOFA関連項目なし）');
 
   // DSI
-  if(!isNaN(pulse)&&!isNaN(dbp)&&dbp!==0){const dsi=(pulse/dbp).toFixed(2);add('🧮 DSI',`DSI=${dsi} → ${dsi>=3?'危機的':dsi>=2?'ショック疑い':dsi>=1?'軽度':'正常'}`);}else{const m=[];if(isNaN(pulse))m.push('脈拍');if(isNaN(dbp))m.push('拡張期血圧');add('🧮 DSI',miss(m));}
+  if(!isNaN(pulse)&&!isNaN(dbp)&&dbp){const dsi=(pulse/dbp).toFixed(2);add('🧮 DSI',`DSI=${dsi} → ${dsi>=3?'危機的':dsi>=2?'ショック疑い':dsi>=1?'軽度':'正常'}`);}else{add('🧮 DSI',miss(['脈拍','DBP'].filter((_,i)=>[pulse,dbp][i].toString()==='NaN')));} 
 
   // MAP
-  if(!isNaN(sbp)&&!isNaN(dbp)){const map=((sbp+2*dbp)/3).toFixed(1);add('🩸 MAP',`MAP=${map} mmHg`);}else{const m=[];if(isNaN(sbp))m.push('収縮期血圧');if(isNaN(dbp))m.push('拡張期血圧');add('🩸 MAP',miss(m));}
+  if(!isNaN(sbp)&&!isNaN(dbp)){const map=((sbp+2*dbp)/3).toFixed(1);add('🩸 MAP',`MAP=${map} mmHg`);}else{add('🩸 MAP',miss(['SBP','DBP'].filter((_,i)=>[sbp,dbp][i].toString()==='NaN')));} 
 
   // Urine
-  if(!isNaN(urine)){add('🚻 尿量',`${urine} ml/h → ${urine<50?'少尿':'正常'}`);}  
+  if(!isNaN(urine)){add('🚻 尿量',`${urine} ml/h → ${urine<50?'少尿':'正常'}`);} 
 
   resultArea.innerHTML=html;
-  if(html){copyBtn.classList.remove('hidden');}
+  if(html)copyBtn.classList.remove('hidden');
 });
 </script>
 </body>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>看護学校 国語対策｜まずは漢字から確実に得点する！</title>
+  <!-- メタタグ -->
+  <meta name="description" content="看護学校入試の国語対策サイト。漢字・敬語・謙譲語を効率的に学び、確実に得点力を伸ばす勉強法を解説します。">
+  <meta name="keywords" content="看護学校, 国語対策, 漢字, 敬語, 謙譲語, 過去問, 入試勉強">
+  <meta property="og:title" content="看護学校 国語対策｜まずは漢字から確実に得点する！">
+  <meta property="og:description" content="漢字や敬語の効率的勉強法をマスターし、国語で高得点を狙おう。過去問解説や学習スケジュールもご紹介。">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* 全体リセット＆ベース */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Noto Serif JP', serif; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); color: #333; line-height: 1.6; }
+    a { text-decoration: none; }
+    h1, h2, h3 { font-weight: 700; }
+    p { margin-bottom: 1em; }
+    .container { width: 90%; max-width: 1000px; margin: 0 auto; }
+
+    /* ヒーロー */
+    .hero-section { background: linear-gradient(45deg, #0066cc, #0099ff); color: #fff; text-align: center; padding: 80px 20px; border-radius: 0 0 50% 50% / 0 0 5% 5%; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+    .hero-section h1 { font-size: 2.5em; margin-bottom: 20px; text-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+    .hero-section p { font-size: 1.2em; letter-spacing: 0.05em; }
+
+    /* 学習目的 */
+    .learning-purpose-section { background: #ffffff; padding: 40px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transform: translateY(-50px); margin-bottom: -50px; }
+    .learning-purpose-section h2 { color: #0066cc; font-size: 1.8em; margin-bottom: 20px; }
+    .learning-purpose-section p { margin-bottom: 15px; }
+
+    /* 過去問チャレンジ */
+    .challenge-section { background: linear-gradient(45deg, #ffeb3b, #ffc107); padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-align: center; margin: 40px auto; }
+    .challenge-section h2 { color: #333; font-size: 1.8em; margin-bottom: 15px; }
+    .challenge-section p { color: #444; font-size: 1.1em; }
+
+    /* 問題 */
+    .exam-section { background: #ffffff; padding: 40px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin: 60px auto; transition: transform 0.3s; }
+    .exam-section:hover { transform: translateY(-5px); }
+    .exam-section h2 { color: #0066cc; margin-bottom: 30px; font-size: 1.8em; }
+    .exam-section ol { list-style: decimal inside; }
+    .exam-section ol li { margin-bottom: 30px; }
+    .exam-section mark { background: #ffeb3b; }
+    .btn-answer { background: #ff6666; color: #fff; padding: 8px 16px; border: none; border-radius: 8px; cursor: pointer; box-shadow: 0 3px 6px rgba(0,0,0,0.1); transition: background 0.3s; }
+    .btn-answer:hover { background: #ff4d4d; }
+    .answer-box { display: none; background: #f9f9f9; border-left: 5px solid #0066cc; padding: 20px; margin-top: 15px; border-radius: 0 8px 8px 0; box-shadow: 0 3px 6px rgba(0,0,0,0.05); }
+
+    /* 会話 */
+    .faq-section { margin: 60px auto; max-width: 800px; }
+    .faq-section .balloon-box { margin-bottom: 20px; }
+    .balloon-left, .balloon-right { display: flex; align-items: flex-start; }
+    .balloon-right { flex-direction: row-reverse; }
+    .balloon-left img, .balloon-right img { width: 60px; height: 60px; border-radius: 50%; border: 2px solid #0066cc; }
+    .balloon-left p { background: #fff; border-radius: 15px; padding: 15px; box-shadow: 0 3px 6px rgba(0,0,0,0.05); margin-left: 15px; position: relative; }
+    .balloon-left p::before { content: ''; position: absolute; left: -20px; top: 15px; border: 10px solid transparent; border-right-color: #fff; }
+    .balloon-right p { background: #0066cc; color: #fff; border-radius: 15px; padding: 15px; box-shadow: 0 3px 6px rgba(0,0,0,0.05); margin-right: 15px; position: relative; }
+    .balloon-right p::before { content: ''; position: absolute; right: -20px; top: 15px; border: 10px solid transparent; border-left-color: #0066cc; }
+
+    /* FAQ */
+    #faq { background: #ffffff; padding: 40px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin: 60px auto; max-width: 800px; }
+    #faq h2 { color: #0066cc; font-size: 1.8em; margin-bottom: 20px; }
+    #faq dl dt { font-weight: 500; margin-top: 20px; }
+    #faq dl dd { margin: 10px 0 0 20px; }
+
+    /* 相談 */
+    .contact-choice-section { margin: 60px auto; max-width: 800px; text-align: center; }
+    .talk-bubble { background: #fff; display: inline-block; padding: 20px 30px; border-radius: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin-bottom: 30px; }
+    .contact-buttons a { display: inline-block; margin: 0 15px; padding: 12px 24px; border-radius: 8px; font-weight: 500; box-shadow: 0 3px 6px rgba(0,0,0,0.1); transition: transform 0.3s; }
+    .contact-buttons a:hover { transform: translateY(-3px); }
+    .btn-line { background: #00c300; color: #fff; }
+    .btn-consultation { background: #007bff; color: #fff; }
+
+    /* フッター */
+    footer { text-align: center; padding: 20px 0; color: #666; }
+  </style>
+  <script>
+    function showAnswer(id) { var el = document.getElementById(id); el.style.display = el.style.display === 'block' ? 'none' : 'block'; }
+  </script>
+</head>
+<body>
+  <header class="hero-section">
+    <div class="container">
+      <h1>国語は漢字から！得点源を確実に積み上げよう</h1>
+      <p>まずは"確実に点が取れる"問題から始めよう。</p>
+    </div>
+  </header>
+
+  <section class="learning-purpose-section container">
+    <h2>受験前に国語で漢字や敬語を学ぶ理由</h2>
+    <p>看護学校入試の国語では「漢字」「敬語・謙譲語」「現代文読解」が配点の大部分を占めます。このうち漢字や敬語は、正解が一つに定まりやすく、効率的に得点を伸ばせる分野です。</p>
+    <p>まずは漢字の読み書きや敬語の使い分けをマスターし、確実な得点力を身につけましょう。短期間の対策でも伸びを実感しやく、自信を持って本番に臨めます。</p>
+    <p>基礎が固まれば、現代文読解に取り組む時間を確保でき、難易度の高い問題にも余裕をもって挑戦できます。</p>
+    <p>最初に“確実に取れる土台”を築き、国語全体で高得点を狙いましょう。</p>
+  </section>
+
+  <!-- 過去問チャレンジ -->
+  <section class="challenge-section container">
+    <h2>過去問にチャレンジ！</h2>
+    <p>実際の過去問を解いてみましょう。今の実力を試すチャンスです。</p>
+
+  <section class="exam-section">
+    <h2>漢字 読み問題</h2>
+    <p><strong>問題1：</strong>傍線部の漢字の読み方が正しいものを選びなさい。</p>
+    <ol>
+      <li>
+        知事となって<mark>制御</mark>につとめる。
+        <ul>
+          <li><label><input type="radio" name="q1_1"> ① こつせい</label></li>
+          <li><label><input type="radio" name="q1_1"> ② せいぎょ</label></li>
+          <li><label><input type="radio" name="q1_1"> ③ せいぎ</label></li>
+        </ul>
+        <button class="btn-answer" onclick="showAnswer('a1')">解答を見る</button>
+        <div id="a1" class="answer-box">正解：② せいぎょ</div>
+      </li>
+      <li>
+        税金を<mark>納</mark>める。
+        <ul>
+          <li><label><input type="radio" name="q1_2"> ① おさめる</label></li>
+          <li><label><input type="radio" name="q1_2"> ② おろす</label></li>
+          <li><label><input type="radio" name="q1_2"> ③ おぼえる</label></li>
+        </ul>
+        <button class="btn-answer" onclick="showAnswer('a2')">解答を見る</button>
+        <div id="a2" class="answer-box">正解：① おさめる</div>
+      </li>
+      <li>
+        計画が<mark>潰</mark>える。
+        <ul>
+          <li><label><input type="radio" name="q1_3"> ① こぼれる</label></li>
+          <li><label><input type="radio" name="q1_3"> ② つぶえる</label></li>
+          <li><label><input type="radio" name="q1_3"> ③ しずむ</label></li>
+        </ul>
+        <button class="btn-answer" onclick="showAnswer('a3')">解答を見る</button>
+        <div id="a3" class="answer-box">正解：② つぶえる</div>
+      </li>
+      <li>
+        採用にあたって<mark>躊躇</mark>する。
+        <ul>
+          <li><label><input type="radio" name="q1_4"> ① ためらう</label></li>
+          <li><label><input type="radio" name="q1_4"> ② はげむ</label></li>
+          <li><label><input type="radio" name="q1_4"> ③ ゆずる</label></li>
+        </ul>
+        <button class="btn-answer" onclick="showAnswer('a4')">解答を見る</button>
+        <div id="a4" class="answer-box">正解：① ためらう</div>
+      </li>
+      <li>
+        会議の資料を<mark>配布</mark>する。
+        <ul>
+          <li><label><input type="radio" name="q1_5"> ① はいふ</label></li>
+          <li><label><input type="radio" name="q1_5"> ② くばる</label></li>
+          <li><label><input type="radio" name="q1_5"> ③ しるす</label></li>
+        </ul>
+        <button class="btn-answer" onclick="showAnswer('a5')">解答を見る</button>
+        <div id="a5" class="answer-box">正解：① はいふ</div>
+      </li>
+    </ol>
+  </section>
+
+   <!-- 会話 -->
+   <section class="exam-section">
+    <h2>国語の勉強に悩むあなたへ ～先生と生徒の会話～</h2>
+    <div class="faq-section">
+      <div class="balloon-box balloon-left">
+        <img src="images/student/student-question.png" alt="学生の疑問">
+        <p><strong>生徒：</strong>「国語って、何から勉強すればいいのかわからないんです…」</p>
+      </div>
+      <div class="balloon-box balloon-right">
+        <img src="images/teacher/teacher-smile.png" alt="講師の笑顔">
+        <p><strong>講師：</strong>「現代文は、ある程度の点数は取れても、そこから伸ばすのが難しい教科なんですよ。」</p>
+      </div>
+      <div class="balloon-box balloon-left">
+        <img src="images/student/student-thinking.png" alt="学生の考え中">
+        <p><strong>生徒：</strong>「確かに、最初の模試でも国語はまあまあでしたが、もっと点数を伸ばしたいです。」</p>
+      </div>
+      <div class="balloon-box balloon-right">
+        <img src="images/teacher/teacher-serious.png" alt="講師のアドバイス">
+        <p><strong>講師：</strong>「それなら、まず漢字や敬語を重点的に勉強しましょう。ここは答えが一つに定まるから、確実に得点できますよ。」</p>
+      </div>
+      <div class="balloon-box balloon-left">
+        <img src="images/student/student-smile.png" alt="学生の納得">
+        <p><strong>生徒：</strong>「なるほど！漢字や敬語で土台を築くんですね。」</p>
+      </div>
+      <div class="balloon-box balloon-right">
+        <img src="images/teacher/teacher-happy.png" alt="講師の励まし">
+        <p><strong>講師：</strong>「そうです！基礎を固めたら、読解力も自然と伸びますから安心してください。」</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <h2>よくある質問 (FAQ)</h2>
+    <dl>
+      <dt>Q: 漢字は何年生レベルまで学べば良いですか？</dt>
+      <dd>A: 主に中学3年生レベルの漢字が中心です。まずは中学校範囲を復習しましょう。</dd>
+      <dt>Q: 敬語の勉強はどう進めるべき？</dt>
+      <dd>A: 敬語の用法を例文で覚え、実際の文章を写す練習を繰り返すと定着しやすいです。</dd>
+      <dt>Q: 1日の学習時間はどれくらい必要ですか？</dt>
+      <dd>A: 毎日30分～1時間程度の継続学習がおすすめです。短時間でも毎日続けることが鍵です。</dd>
+      <dt>Q: 現代文読解の対策はいつ始めれば良いですか？</dt>
+      <dd>A: 漢字と敬語の基礎が固まってから始めると効率的です。目安として、入試3ヶ月前から本格的に取り組みましょう。</dd>
+    </dl>
+  </section>
+
+  <!-- 相談 -->
+  <section class="contact-choice-section">
+    <div class="talk-bubble">
+      <p><strong>「LINEで気軽に」「フォームでしっかり」</strong><br>相談方法を選んでください！</p>
+    </div>
+    <div class="contact-buttons">
+      <a href="https://lin.ee/RMEsDnD" class="btn-line" target="_blank">LINEで相談する</a>
+      <a href="questionnaire.html" class="btn-consultation">フォームで相談する</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 マオズ看護学校予備校</p>
+  </footer>
+</body>
+</html>
