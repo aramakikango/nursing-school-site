@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://aramakikango.github.io/nursing-school-site/</loc>
-  </url>
-  <url>
-    <loc>https://aramakikango.github.io/nursing-school-site/math-practice.html</loc>
-  </url>
+  <url><loc>https://aramakikango.github.io/nursing-school-site/</loc></url>
+  <url><loc>https://aramakikango.github.io/nursing-school-site/index.html</loc></url>
+  <url><loc>https://aramakikango.github.io/nursing-school-site/math-practice.html</loc></url>
+  <url><loc>https://aramakikango.github.io/nursing-school-site/book-guide.html</loc></url>
+  <url><loc>https://aramakikango.github.io/nursing-school-site/interview-guide.html</loc></url>
+  <url><loc>https://aramakikango.github.io/nursing-school-site/english-start.html</loc></url>
+  <url><loc>https://aramakikango.github.io/nursing-school-site/exam-style.html</loc></url>
+  <url><loc>https://aramakikango.github.io/nursing-school-site/motivation.html</loc></url>
+  <url><loc>https://aramakikango.github.io/nursing-school-site/motivation-start-guide.html</loc></url>
+  <url><loc>https://aramakikango.github.io/nursing-school-site/self-recommendation-guide.html</loc></url>
+  <url><loc>https://aramakikango.github.io/nursing-school-site/nursing-school-interview.html</loc></url>
+  <url><loc>https://aramakikango.github.io/nursing-school-site/vital-evaluation.html</loc></url>
+  <url><loc>https://aramakikango.github.io/nursing-school-site/kakomon.html</loc></url>
+  <url><loc>https://aramakikango.github.io/nursing-school-site/kakomonsuugaku.html</loc></url>
+  <url><loc>https://aramakikango.github.io/nursing-school-site/kanjiexampage.html</loc></url>
+  <url><loc>https://aramakikango.github.io/nursing-school-site/schoolselectino.html</loc></url>
+  <url><loc>https://aramakikango.github.io/nursing-school-site/troubles.html</loc></url>
+  <url><loc>https://aramakikango.github.io/nursing-school-site/questionnaire.html</loc></url>
+  <url><loc>https://aramakikango.github.io/nursing-school-site/time-management.html</loc></url>
 </urlset>
