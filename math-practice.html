@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>点滴計算は一次関数だった！？看護に活きる数学の力｜マオズ看護学校予備校</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&display=swap">
+  <style>
+    /* カラーパレット */
+    :root {
+      --gold: #D4AF37;
+      --deep-blue: #001F3F;
+      --ivory: #FFF8E1;
+      --white: #FFFFFF;
+      --gold-light: rgba(212, 175, 55, 0.3);
+    }
+    /* リセット */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Noto Serif JP', serif; background: linear-gradient(135deg, #f9f6f1 0%, #e6e2d3 100%); color: var(--deep-blue); line-height: 1.8; }
+    a { color: var(--deep-blue); text-decoration: none; }
+    /* ヘッダー */
+    header { background: var(--deep-blue); padding: 60px 20px; text-align: center; position: relative; }
+    header::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--gold-light); mix-blend-mode: screen; }
+    header h1 { position: relative; font-size: 3rem; color: var(--ivory); letter-spacing: 2px; }
+    header .subtitle { position: relative; margin-top: 10px; font-size: 1.25rem; color: var(--ivory); }
+    /* コンテナ */
+    .container { width: 90%; max-width: 900px; margin: 0 auto; }
+    /* インデックスナビ */
+    .page-index { background: var(--deep-blue); }
+    .page-index ul { list-style: none; padding: 20px; display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 10px; }
+    .page-index a { display: block; background: var(--ivory); color: var(--deep-blue); text-align: center; padding: 8px 12px; border-radius: 6px; font-weight: 600; transition: background .3s; }
+    .page-index a:hover { background: var(--gold-light); }
+    /* 戻るリンク */ */
+    .btn-index { background: var(--deep-blue); color: #fff; }
+    /* セクション共通 */
+    section { margin: 60px 0; }
+    section[class$="-section"] { background: var(--white); border-radius: 12px; box-shadow: 0 8px 16px rgba(0,0,0,0.1); padding: 40px; }
+    h2 { font-size: 2rem; color: var(--deep-blue); margin-bottom: 20px; position: relative; }
+    h2::after { content: ''; display: block; width: 60px; height: 4px; background: var(--gold); margin-top: 8px; border-radius: 2px; }
+    p, li, dt, dd { margin-bottom: 16px; }
+    /* 会話ボックス */
+    .conversation-box { display: flex; gap: 20px; margin-bottom: 30px; }
+    .conversation-box img.icon { width: 60px; height: 60px; border-radius: 50%; border: 2px solid var(--gold); }
+    .student, .teacher { flex: 1; background: #f9f9f1; border-radius: 8px; padding: 20px; }
+    .student { border-left: 6px solid #0095DD; }
+    .teacher { border-left: 6px solid #DD0000; }
+    /* フォーム */
+    form { display: flex; gap: 12px; margin-top: 20px; }
+    input { flex: 1; padding: 12px; border: 2px solid #ccc; border-radius: 6px; font-size: 1rem; }
+    button { padding: 12px 24px; background: var(--gold); border: none; border-radius: 6px; font-size: 1rem; color: var(--deep-blue); cursor: pointer; transition: background .3s; }
+    button:hover { background: #c49c30; }
+    .explanation { background: #fcfcfa; border-left: 6px solid var(--gold); padding: 24px; margin-top: 20px; border-radius: 6px; }
+    /* グラフ */
+    .visualization-section canvas { width: 100%; height: auto; border: 2px solid var(--deep-blue); border-radius: 8px; }
+    .graph-explanation ol { list-style: decimal inside; margin-top: 20px; }
+    .graph-explanation li { margin-bottom: 12px; }
+    /* コンテンツ */
+    .case-study-section ul, .mistakes-section ul { list-style: disc inside; }
+    .glossary-section dl { display: grid; grid-template-columns: auto 1fr; gap: 12px 24px; }
+    .glossary-section dt { font-weight: bold; }
+    .mistakes-section li::before { content: '⚠️'; margin-right: 8px; }
+    /* CTA */
+    .call-to-action { text-align: center; padding: 60px; background: linear-gradient(45deg, var(--deep-blue), var(--gold)); color: var(--ivory); }
+    .call-to-action h2, .call-to-action p { color: var(--ivory); }
+    .btn-free-consultation { background: var(--ivory); color: var(--deep-blue); padding: 14px 28px; border-radius: 6px; display: inline-block; margin-top: 20px; }
+    /* ボタンコンテナ共通 */
+    .btn-block      { display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:20px; margin:40px 0; }
+    .btn-block a    { display:inline-flex; align-items:center; gap:8px; font-weight:bold; padding:12px 24px; border-radius:8px; }
+    /* 連絡ボタン */
+    .btn-line       { background:#00C300; color:#fff; }
+    .btn-index      { background:var(--deep-blue); color:#fff; }
+    /* SNSシェア */
+    .share-twitter  { background:#1DA1F2; color:#fff; }
+    .share-line     { background:#00C300; color:#fff; }
+    /* フッター */
+    footer { background: var(--deep-blue); color: var(--ivory); padding: 20px; text-align: center; font-size: 0.875rem; }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      ['drip-form', 'exam-form'].forEach(id => {
+        document.getElementById(id).addEventListener('submit', e => {
+          e.preventDefault();
+          document.getElementById(id.replace('-form','-explanation')).hidden = false;
+        });
+      });
+      const canvas = document.getElementById('problem-graph'), ctx = canvas.getContext('2d');
+      const totalTime = 480, initialVol = 1000;
+      const m = {left:50, top:50, right:30, bottom:50};
+      const W = canvas.width, H = canvas.height;
+      const plotW = W - m.left - m.right, plotH = H - m.top - m.bottom;
+      const scaleX = plotW / totalTime, scaleY = plotH / initialVol;
+      ctx.lineWidth = 2;
+      // 軸
+      ctx.strokeStyle = '#001F3F'; ctx.beginPath(); ctx.moveTo(m.left, m.top); ctx.lineTo(m.left, H-m.bottom); ctx.lineTo(W-m.right, H-m.bottom); ctx.stroke();
+      ctx.font='16px serif'; ctx.fillStyle='#001F3F'; ctx.fillText('容量 (mL)', m.left-40, m.top+10); ctx.fillText('時間 (分)', W-m.right-40, H-m.bottom+30);
+      // メモリ
+      for(let t=0; t<=totalTime; t+=60){ const x=m.left+t*scaleX; ctx.beginPath(); ctx.moveTo(x, H-m.bottom); ctx.lineTo(x, H-m.bottom+10); ctx.stroke(); ctx.fillText(t, x-10, H-m.bottom+30); }
+      for(let v=0; v<=initialVol; v+=250){ const y=H-m.bottom-v*scaleY; ctx.beginPath(); ctx.moveTo(m.left-10, y); ctx.lineTo(m.left, y); ctx.stroke(); ctx.fillText(v, m.left-50, y+5); }
+      // 直線
+      ctx.strokeStyle = 'var(--gold)'; ctx.beginPath(); ctx.moveTo(m.left, m.top); ctx.lineTo(m.left+plotW, H-m.bottom); ctx.stroke();
+    });
+  </script>
+</head>
+<body id="top">
+
+  <header>
+    <h1>点滴計算は一次関数だった！？</h1>
+    <p class="subtitle">看護に活きる数学の力を体験しよう</p>
+  </header>
+
+  <!-- ページインデックスナビ -->
+  <nav class="page-index" style="background:#fff; padding:20px; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.1); margin:20px 0;">
+    <div class="container">
+      <h2 style="font-size:1.5rem; color:var(--deep-blue); margin-bottom:10px;">ページインデックス</h2>
+      <ul style="list-style:none; padding:0; display:flex; flex-wrap:wrap; gap:12px;">
+        <li><a href="#question-section" style="color:var(--primary);">導入の問いかけ</a></li>
+        <li><a href="#conversation-section" style="color:var(--primary);">会話</a></li>
+        <li><a href="#math-problem-section" style="color:var(--primary);">計算問題</a></li>
+        <li><a href="#exam-problem-section" style="color:var(--primary);">過去問</a></li>
+        <li><a href="#case-study-section" style="color:var(--primary);">ケーススタディ</a></li>
+        <li><a href="#glossary-section" style="color:var(--primary);">用語集</a></li>
+        <li><a href="#mistakes-section" style="color:var(--primary);">計算ミス対策</a></li>
+        <li><a href="#visualization-section" style="color:var(--primary);">グラフ可視化</a></li>
+        <li><a href="#faq-section" style="color:var(--primary);">FAQ</a></li>
+        <li><a href="#call-to-action" style="color:var(--primary);">お問い合わせ</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="question-section" class="question-section fade-in">
+    <div class="container">
+      <h2>「数学なんて、看護師になってから使うの？」と思っていませんか？</h2>
+      <p>実は、<strong>看護師国家試験</strong>にも、<strong>点滴の滴下計算</strong>のような数学的な問題が出題されます。<br>
+      そしてそれは実際の現場で患者さんの命を守る大切な計算です。<br><br>
+      今日学ぶ一次関数は、あなたの“命をつなぐ計算”に直結！</p>
+    </div>
+  </section>
+  
+  <!-- ページインデックスナビ -->
+  <nav class="page-index" style="background:#fff; padding:20px; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.1); margin:20px 0;">
+    <div class="container">
+      <h2 style="font-size:1.5rem; color:var(--deep-blue); margin-bottom:10px;">ページインデックス</h2>
+      <ul style="list-style:none; padding:0; display:flex; flex-wrap:wrap; gap:12px;">
+        <li><a href="#question-section" style="color:var(--primary);">導入の問いかけ</a></li>
+        <li><a href="#conversation-section" style="color:var(--primary);">会話</a></li>
+        <li><a href="#math-problem-section" style="color:var(--primary);">計算問題</a></li>
+        <li><a href="#exam-problem-section" style="color:var(--primary);">過去問</a></li>
+        <li><a href="#case-study-section" style="color:var(--primary);">ケーススタディ</a></li>
+        <li><a href="#glossary-section" style="color:var(--primary);">用語集</a></li>
+        <li><a href="#mistakes-section" style="color:var(--primary);">計算ミス対策</a></li>
+        <li><a href="#visualization-section" style="color:var(--primary);">グラフ可視化</a></li>
+        <li><a href="#faq-section" style="color:var(--primary);">FAQ</a></li>
+        <li><a href="#call-to-action" style="color:var(--primary);">お問い合わせ</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="conversation-section" class="conversation-section fade-in">
+    <div class="container">
+      <div class="conversation-box student">
+        <img src="images/student/student-tired.jpg" alt="生徒のアイコン" class="icon">
+        <p><strong>生徒：</strong>数学は正直苦手で、勉強したくないんです。こんな計算を学んでも、看護師になるのに役立つんでしょうか？</p>
+      </div>
+      <div class="conversation-box teacher">
+        <img src="images/teacher/teacher-thinking.jpg" alt="先生のアイコン" class="icon">
+        <p><strong>先生：</strong>実は、医療現場では正確な計算が患者さんの命を守ることに直結しているんだ。少しずつ慣れていこう。</p>
+      </div>
+      
+      <div class="conversation-box student">
+        <img src="images/student/student-think.png "alt="生徒のアイコン" class="icon">
+        <p><strong>生徒：</strong>でも、数字ばかりで頭が痛くなりそうです。どうしてこんな計算が必要なんですか？</p>
+      </div>
+      <div class="conversation-box teacher">
+        <img src="images/teacher/teacher-serious.jpg" alt="先生のアイコン" class="icon">
+        <p><strong>先生：</strong>例えば、点滴の滴下計算のような一次関数は、患者さんへの正確な治療量の指示につながるんだ。身近に感じてほしい。</p>
+      </div>
+      
+      <div class="conversation-box student">
+        <img src="images/student/student-think.png" alt="生徒のアイコン" class="icon">
+        <p><strong>生徒：</strong>なるほど、実際に患者さんの容体に影響を与えるんですね…私にもできるのでしょうか？</p>
+      </div>
+      <div class="conversation-box teacher">
+        <img src="images/teacher/teacherteacher-advice.png" alt="先生のアイコン" class="icon">
+        <p><strong>先生：</strong>もちろん。基礎を押さえれば、中学レベルの計算で十分に対応できる。自信を持ってね！</p>
+      </div>
+      
+      <div class="conversation-box student">
+        <img src="images/student/student-smile.png" alt="生徒のアイコン" class="icon">
+        <p><strong>生徒：</strong>そうですか、少しずつなら無理じゃないかもしれません。頑張ってみます、先生！</p>
+      </div>
+      <div class="conversation-box teacher">
+        <img src="images/teacher/teacher-smile.png" alt="先生のアイコン" class="icon">
+        <p><strong>先生：</strong>その意気だ。分からないことがあれば、いつでも聞いてくれ。一緒に成長していこう！</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="math-problem-section" class="math-problem-section fade-in">
+    <div class="container">
+      <h2>点滴の滴下計算に挑戦！</h2>
+      <p><strong>問題：</strong>500mLの点滴を4時間（240分）で投与。<br>
+      滴下数20滴/mLの場合、1分あたり何滴？</p>
+      <form id="drip-form">
+        <input type="text" name="answer" placeholder="答え（滴/分）" required>
+        <button type="submit">回答する</button>
+      </form>
+      <div class="explanation" id="drip-explanation" hidden>
+        <p><strong>答え：</strong>約42滴/分</p>
+        <p><strong>解説：</strong><br>
+          1. 500mL ÷ 240分 = ≒2.08mL/分<br>
+          2. 2.08mL/分 × 20滴 = ≒41.6滴/分 → 約42滴/分</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="exam-problem-section" class="exam-problem-section fade-in">
+    <div class="container">
+      <h2>📖 国家試験 過去問に挑戦！</h2>
+      <p><strong>第109回午後90:</strong> 1,500mLの輸液を朝9時から17時（480分）で投与。<br>
+      20滴/mLのセット使用時の1分あたり滴下数を求め、小数点以下第1位を四捨五入。</p>
+      <form id="exam-form">
+        <input type="text" name="exam-answer" placeholder="答え（滴/分）" required>
+        <button type="submit">回答する</button>
+      </form>
+      <div class="explanation" id="exam-explanation" hidden>
+        <p><strong>答え：</strong>63滴/分</p>
+        <p><strong>解説：</strong><br>
+          1500 ÷ 480 = 3.125mL/分<br>
+          3.125 × 20 = 62.5 → 四捨五入して63滴/分</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="visualization-section" class="visualization-section fade-in">
+    <div class="container">
+      <h2>問題のグラフで可視化</h2>
+      <p>開始1,000mL→終了0mLを右下がりの直線で表現。</p>
+      <canvas id="problem-graph" width="800" height="300"></canvas>
+      <div class="graph-explanation">
+        <ol>
+          <li>開始時（0分）: 1,000mL</li>
+          <li>直線の式: <em>y = - (1000 / 480) x + 1000</em></li>
+          <li>1分ごとに約2.08mLずつ減少</li>
+          <li>8時間後（480分）に0mLへ</li>
+        </ol>
+        <p>グラフ上の0mL到達点が、全量投与終了の時間（480分）を示します。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="case-study-section" class="case-study-section fade-in">
+    <div class="container">
+      <h2>📋 ミニ・ケーススタディ</h2>
+      <p>患者Bさんに750mLの輸液を6時間（360分）で投与する指示があります。滴下数は15滴/mLの場合、1分あたり何滴で設定すべきか考えてみましょう。</p>
+      <ul>
+        <li>全量（750mL）÷ 投与時間（360分） = mL/分</li>
+        <li>出た値 × 滴下数（15滴/mL） = 滴/分</li>
+      </ul>
+      <p>実際に計算してみて、答えをノートにまとめてみましょう。</p>
+    </div>
+  </section>
+  
+  <section id="glossary-section" class="glossary-section fade-in">
+    <div class="container">
+      <h2>📑 用語集 &amp; チートシート</h2>
+      <dl>
+        <dt>滴下率</dt>
+        <dd>1mLあたりの滴数を示す単位（例：20滴/mL）。</dd>
+        <dt>mL ⇄ 分</dt>
+        <dd>時間は必ず「分」に変換してから計算（1時間 = 60分）。</dd>
+        <dt>一次関数</dt>
+        <dd>y = ax + b の形。点滴計算では y = (全量/時間) x の比例関数となる。</dd>
+      </dl>
+      <p><a href="cheatsheet.pdf" target="_blank">チートシート PDFをダウンロード</a></p>
+    </div>
+  </section>
+  
+  <section id="mistakes-section" class="mistakes-section fade-in">
+    <div class="container">
+      <h2>⚠️ 計算ミスあるある &amp; 対策</h2>
+      <ul>
+        <li>時間を「時間」のまま使ってしまう → 必ず分に直すチェックを。</li>
+        <li>滴下数を掛け忘れる → 「mL/分 × 滴数」の順を意識。</li>
+        <li>小数点処理のミス → 計算後に四捨五入の有無を確認。</li>
+        <li>単位の混同（mLとL） → 予め単位を揃えておく。</li>
+      </ul>
+      <p>計算後は必ず自分の手順を声に出して確認しましょう！</p>
+    </div>
+  </section>
+
+  <div class="btn-block">
+    <a href="https://lin.ee/RMEsDnD" class="btn-line" target="_blank">
+      <i class="fab fa-line"></i> LINEで相談する
+    </a>
+    <a href="#top" class="btn-index">ページ上部へ移動</a>
+    <a href="https://twitter.com/intent/tweet?text=この問題を解いたよ！&url=https://maoz-prep.com" class="share-twitter" target="_blank">
+      🐦 Twitterでシェア
+    </a>
+    <a href="https://social-plugins.line.me/lineit/share?url=https://maoz-prep.com" class="share-line" target="_blank">
+      💬 LINEでシェア
+    </a>
+  </div>
+
+  <section id="call-to-action" class="call-to-action fade-in">
+    <div class="container">
+      <h2>現役看護師講師が直接指導！</h2>
+      <p>マオズ看護学校予備校では、看護師国家試験に精通した現役看護師が<br>
+      点滴計算から実務知識まで丁寧にサポート。安心して学べる環境を提供します。</p>
+      <a href="questionnaire.html" class="btn-free-consultation">無料相談はこちら</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 マオズ看護学校予備校 - あなたの夢を全力サポート</p>
+    </div>
+  </footer>
+</body>
+</html>
