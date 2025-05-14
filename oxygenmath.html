@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <style>
+  .oxygen-practice-section {
+    background-color: #f9f9fc;
+    padding: 60px 20px;
+    border-top: 4px solid #D4AF37;
+    border-radius: 8px;
+    margin: 40px 0;
+  }
+  .visualization-section canvas {
+    width: 100%;
+    height: auto;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    margin-top: 20px;
+  }
+  .exam-example-section {
+    background: #fffef8;
+    border-left: 6px solid #001F3F;
+    padding: 40px;
+    margin: 40px auto;
+    border-radius: 8px;
+    max-width: 900px;
+  }
+  .cta-section {
+    background: linear-gradient(135deg, #001F3F 0%, #004080 100%);
+    color: #ffffff;
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin-top: 60px;
+  }
+  .cta-section h2,
+  .cta-section p {
+    color: #ffffff;
+  }
+  .cta-section .btn-block a {
+    background: #D4AF37;
+    color: #001F3F;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background 0.3s;
+    text-decoration: none;
+  }
+  .cta-section .btn-block a:hover {
+    background: #b8962e;
+  }
+
+  .main-header.visual-header {
+    background: #004080; /* 青色 */
+    color: #ffffff; /* テキストを白に */
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 8px;
+  }
+
+  .main-header .header-text h1 {
+    color: #ffffff; /* 見出しを白に */
+  }
+
+  .main-header .header-text .subtitle {
+    color: #d4d4d4; /* サブタイトルを薄いグレーに */
+  }
+</style>
+
+<!-- 続くHTML -->
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>中学数学で解ける！国家試験に出る酸素ボンベ問題</title>
+  
+  <!-- SEO対策のメタタグ -->
+  <meta name="description" content="中学数学の知識で解ける国家試験の酸素ボンベ計算問題を解説。看護師国家試験対策に役立つ情報を提供します。LINE相談や無料体験ワークもご利用ください。" />
+  <meta name="keywords" content="酸素ボンベ, 看護師国家試験, 計算問題, 中学数学, 滴下計算, 看護学校, 国家試験対策, LINE相談" />
+  <meta name="author" content="マオズ看護学校予備校" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph (OG) タグ -->
+  <meta property="og:title" content="中学数学で解ける！国家試験に出る酸素ボンベ問題" />
+  <meta property="og:description" content="中学数学の知識で解ける国家試験の酸素ボンベ計算問題を解説。看護師国家試験対策に役立つ情報を提供します。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://example.com/oxygenmath.html" />
+  <meta property="og:image" content="https://example.com/images/og-image.jpg" />
+  
+  <!-- Twitterカード -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="中学数学で解ける！国家試験に出る酸素ボンベ問題" />
+  <meta name="twitter:description" content="中学数学の知識で解ける国家試験の酸素ボンベ計算問題を解説。看護師国家試験対策に役立つ情報を提供します。" />
+  <meta name="twitter:image" content="https://example.com/images/og-image.jpg" />
+  
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="motivation-start-guide.css" />
+  <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+</head>
+<body>
+
+  <!-- ヒーローセクション -->
+  <header class="main-header visual-header">
+    <div class="container header-flex">
+      <div class="header-text">
+        <h1>その数学、本当に役に立つの？<br>はい、国家試験に出ます。</h1>
+        <p class="subtitle">受験でやった中学数学が、命を守る計算になる。</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- 🌱 受験の不安、1つずつ解消しよう -->
+  <section class="faq-section fade-in">
+    <div class="container">
+      <h2><i data-feather="help-circle"></i> 受験の不安、1つずつ解消しよう</h2>
+      <p>「こんな不安、ありませんか？」</p>
+
+      <!-- 💬 吹き出し会話1：数学の不安 -->
+      <div class="balloon-box">
+        <div class="balloon-left">
+          <img src="images/student/student-think.png" alt="悩む学生">
+          <p><strong>予備校生：</strong>「数学が苦手で、プリントも解けませんでした…もう無理かもと思ってしまって。」</p>
+        </div>
+      </div>
+      <div class="balloon-box">
+        <div class="balloon-right">
+          <img src="images/teacher/teacher-smile.png" alt="講師の笑顔">
+          <p><strong>講師：</strong>「国家試験では中学レベルの問題が出るんです。たとえば“酸素ボンベ10L×15気圧÷3L/分＝150÷3＝50分”という計算。ちゃんと受験勉強が活きますよ。」</p>
+        </div>
+      </div>
+
+      <!-- 💬 吹き出し会話2：社会人のブランク -->
+      <div class="balloon-box">
+        <div class="balloon-left">
+          <img src="images/student/student-question.jpg" alt="学生質問">
+          <p><strong>予備校生：</strong>「社会人になって何年も勉強してなかったので、追いつけるか不安です…」</p>
+        </div>
+      </div>
+      <div class="balloon-box">
+        <div class="balloon-right">
+          <img src="images/teacher/teacher-serious.jpg" alt="講師真剣">
+          <p><strong>講師：</strong>「大丈夫ですよ。社会人の方は“計画を守る力”が強いんです。マオズでは一人ひとりに合ったペースで学べます。」</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 📖 Q&Aセクション -->
+  <section class="faq-section fade-in">
+    <div class="container">
+      <h2><i data-feather="help-circle"></i> よくある質問</h2>
+      <div class="faq-item">
+        <h3>Q: 酸素ボンベの計算が苦手です。どうすればいいですか？</h3>
+        <p>A: 酸素ボンベの計算は「距離 ÷ 速さ ＝ 時間」と同じ考え方です。まずは基本的な公式を覚え、簡単な問題から練習してみましょう。</p>
+      </div>
+      <div class="faq-item">
+        <h3>Q: 国家試験でどのくらいの計算問題が出ますか？</h3>
+        <p>A: 国家試験では中学レベルの計算問題が出題されることが多いです。酸素ボンベの計算や滴下計算など、実務に直結する問題が中心です。</p>
+      </div>
+      <div class="faq-item">
+        <h3>Q: 計算が苦手な私でも合格できますか？</h3>
+        <p>A: もちろんです！計算が苦手な方でも、基礎から学べば十分に対応できます。LINEでの相談や個別指導も活用してください。</p>
+      </div>
+      <div class="faq-item">
+        <h3>Q: 他にどんなサポートがありますか？</h3>
+        <p>A: マオズ看護学校予備校では、LINE相談や無料体験ワーク、個別指導など、さまざまなサポートを提供しています。お気軽にご相談ください。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🧮 酸素ボンベの計算練習フォーム -->
+  <section class="oxygen-practice-section fade-in">
+    <div class="container">
+      <h2><i data-feather="activity"></i> 酸素ボンベの計算にチャレンジ！</h2>
+      <p><strong>問題：</strong>10Lの酸素ボンベに15MPaの圧がかかっています。酸素流量が3L/分のとき、何分使用できるでしょうか？</p>
+      <form id="oxygen-form">
+        <input type="number" name="oxygen-answer" placeholder="答え（分）" required>
+        <button type="submit">回答する</button>
+      </form>
+      <div class="explanation" id="oxygen-explanation" hidden>
+        <p><strong>答え：</strong>50分</p>
+        <p><strong>解説：</strong></p>
+        <ul>
+          <li>酸素量 ＝ 容量 × 圧力 → 10L × 15MPa = 150L</li>
+          <li>使用時間 ＝ 150L ÷ 3L/分 = <strong>50分</strong></li>
+        </ul>
+        <p>これは「距離 ÷ 速さ ＝ 時間」と同じ考え方。中学数学の応用です！</p>
+      </div>
+        <a href="#oxygen-form" class="btn-index">もう一度計算する</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 📊 酸素量グラフで可視化 -->
+  <section class="visualization-section fade-in">
+    <div class="container">
+      <h2><i data-feather="bar-chart-2"></i> 酸素残量のグラフで理解しよう</h2>
+      <p>ボンベ内の酸素が時間とともにどう減っていくか、視覚的に見てみましょう。</p>
+      <canvas id="oxygen-graph" width="800" height="300"></canvas>
+    </div>
+  </section>
+
+  <!-- 📘 国家試験過去問紹介 -->
+  <section class="exam-example-section fade-in">
+    <div class="container">
+      <h2><i data-feather="book-open"></i> 実際に出た国家試験問題</h2>
+      <p><strong>第102回 午後問題：</strong><br>容量10Lの酸素ボンベに15MPaの酸素が充填されている。酸素流量3L/分で使用するとき、使用可能な時間は？</p>
+      <p><strong>選択肢：</strong> ①30分　②50分　③100分　④150分</p>
+      <p><strong>正解：</strong>②50分</p>
+      <p><strong>ポイント：</strong>中学の「速さ×時間＝距離」と同じように、<br>酸素量（L）＝流量（L/分）×時間（分）という式で考えるだけ！</p>
+  </div>
+</section>
+
+  <section>
+    <h2>LINEで気軽に相談したい方へ</h2>
+    <p>ちょっとした質問や相談は、LINEで気軽にできます！</p>
+    <p style="text-align: center; margin-top: 20px;">
+      <a href="https://lin.ee/your-line-link" class="btn-line-consultation">💬 LINEで相談する</a>
+    </p>
+  </section>
+</body>
+</html>
+
+
+
+
+
+  <!-- featherアイコン置換＆グラフ描画 -->
+  <script>
+    feather.replace();
+
+    document.getElementById("oxygen-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      document.getElementById("oxygen-explanation").hidden = false;
+    });
+
+    const canvas = document.getElementById('oxygen-graph');
+    const ctx = canvas.getContext('2d');
+    const totalTime = 50;
+    const totalOxygen = 150;
+    const m = {left:50, top:30, right:30, bottom:50};
+    const W = canvas.width, H = canvas.height;
+    const plotW = W - m.left - m.right, plotH = H - m.top - m.bottom;
+    const scaleX = plotW / totalTime, scaleY = plotH / totalOxygen;
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = '#001F3F';
+    ctx.beginPath();
+    ctx.moveTo(m.left, m.top);
+    ctx.lineTo(m.left, H - m.bottom);
+    ctx.lineTo(W - m.right, H - m.bottom);
+    ctx.stroke();
+    ctx.font = '14px sans-serif';
+    ctx.fillText('酸素量 (L)', m.left - 40, m.top);
+    ctx.fillText('時間 (分)', W - m.right - 50, H - m.bottom + 30);
+
+    // メモリ
+    for (let t = 0; t <= totalTime; t += 10) {
+      const x = m.left + t * scaleX;
+      ctx.beginPath();
+      ctx.moveTo(x, H - m.bottom);
+      ctx.lineTo(x, H - m.bottom + 5);
+      ctx.stroke();
+      ctx.fillText(t.toString(), x - 10, H - m.bottom + 20);
+    }
+    for (let v = 0; v <= totalOxygen; v += 30) {
+      const y = H - m.bottom - v * scaleY;
+      ctx.beginPath();
+      ctx.moveTo(m.left - 5, y);
+      ctx.lineTo(m.left, y);
+      ctx.stroke();
+      ctx.fillText(v.toString(), m.left - 40, y + 5);
+    }
+    // グラフ描画
+    ctx.strokeStyle = '#D4AF37';
+    ctx.beginPath();
+    ctx.moveTo(m.left, m.top);
+    ctx.lineTo(m.left + totalTime * scaleX, H - m.bottom);
+    ctx.stroke();
+  </script>
+
+</body>
+</html>
+``` 
